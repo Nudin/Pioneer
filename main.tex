@@ -17,7 +17,7 @@
 % \end{abstract}
 
 \section{Geschichte/Einführung/Die Sonden}
-Im Februar 1969 genemigte die NASA ( National Aeronautics and Space Administration) ein Programm, um den Asteoriedengürtel,
+Im Februar 1969 genehmigte die NASA ( National Aeronautics and Space Administration) ein Programm, um den Asteoriedengürtel,
 das interplanetare Medium zwischen Mars und Jupiter und die äußeren Planeten zu erforschen.
 Hierzu wurden zwei baugleiche Sonden Pioneer F (Pioneer 10 Mission) und Pioneer G (Pioneer 11 Mission) zum Jupiter gebracht.
 Die Pioneer 10 Mission startete am 2. März 1972
@@ -29,16 +29,18 @@ Die Sonden Pioneer 10 und Pioneer 11 waren die ersten Missionen, die die äußer
 \subsection{Frequenzmessung}
 
 Die Geschwindigkeitsmessung der Pioneersonden erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen.
-Von den Bodenstationen (kontrolliert vom Deep Space Network) wurden Radiowellen mit bekannter Frequenz zum Sateliten gesendet (uplink).
-Der Satelit empfänt das Signal dopplerverschoben:
+Von den Bodenstationen des Deep Space Networks wurden Radiowellen mit bekannter Frequenz zum Satelliten gesendet (uplink).
+Der Satelit empfängt das Signal dopplerverschoben:
 \begin{equation}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
 \end{equation}
-und antwortet mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
+und antwortet mittels einer 8-Watt Sendeanlage und eines Transponders
+mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
 \begin{equation}
 \nu'_R = \nu_R\frac{240}{211}
 \end{equation}
-Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben. Das Empfangene Signal ist also zweifach doppleverschoben und um den Faktor $\frac{240}{221}$ verschoben.
+Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
+Das Empfangene Signal ist also zweifach doppleverschoben und um den Faktor $\frac{240}{221}$ verschoben.
 \begin{equation}
  \nu'_E = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c}) \cdot \frac{240}{211}\nu_R \, = \, \frac{1}{1-\frac{v^2}{c^2}}(1-\frac{v}{c})^2 \cdot \frac{240}{211} \nu_E
 \end{equation}
@@ -46,12 +48,17 @@ Die relative Verschiebung ergibt sich also zu
 \begin{equation}
  \frac{\nu'_E-\nu_E}{\nu_E} = \frac{\frac{19}{221}- \frac{461}{221}\frac{v}{c}}{1+\frac{v}{c}}.
 \end{equation}
-In vielen Quellen wird die konstante Frequenzverschiebung durch die Elektronik der Quelle vereinfacht, was zur einfacheren Form von
+In vielen Quellen wird die konstante Frequenzverschiebung durch die Elektronik der Quelle vernachlässigt, was zur einfacheren Form von
 \begin{equation}
  \frac{\nu'_E-\nu_E}{\nu_E} \approx -2\frac{v/c}{1+v/c} \approx -2 \frac{v}{c}
 \end{equation}
 führt.
-
+Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit $\Delta t$ des Signales bestimmen:
+\begin{equation}
+ 2d = c \Delta t
+\end{equation}
+Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
+Fehlerminimierung und Ausschluss einiger Phänomenologischer Fehler ermöglicht.
 
 \rem{
 
