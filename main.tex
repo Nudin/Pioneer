@@ -1,12 +1,13 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8x]{inputenc}
+\usepackage{cite}
 
 \newcommand{\rem}[1]{}
 
 
 %opening
 \title{Die Pioneer-Anormalie}
-\author{Judith, Michi, Flo}
+\author{Judith Selig, Michael F. Schönitzer, Florian Schlagintweit}
 
 \begin{document}
 
@@ -17,12 +18,29 @@
 % \end{abstract}
 
 \section{Geschichte/Einführung/Die Sonden}
-Im Februar 1969 genehmigte die NASA ( National Aeronautics and Space Administration) ein Programm, um den Asteoriedengürtel,
-das interplanetare Medium zwischen Mars und Jupiter und die äußeren Planeten zu erforschen.
-Hierzu wurden zwei baugleiche Sonden Pioneer F (Pioneer 10 Mission) und Pioneer G (Pioneer 11 Mission) zum Jupiter gebracht.
-Die Pioneer 10 Mission startete am 2. März 1972
+Im Februar 1969 genehmigte die NASA ( National Aeronautics and Space Administration) ein Programm,
+um den Asteroidengürtel, das interplanetare Medium zwischen Mars und Jupiter,
+die äußeren Planeten und Fly-By Manöver zu erforschen. Hierzu wurden zwei baugleiche Sonden Pioneer F (Pioneer 10 Mission)
+und Pioneer G (Pioneer 11 Mission) zum Jupiter gebracht.
+Die Pioneer 10 Mission startete am 2. März 1972 und wurde dann auf ca. 14,4 km/s beschleunigt.
+Die Sonde durchflog im Juli 1972 unbeschadet den Asteroidengürtel und erreichte am 4. Dezember 1973 den Jupiter.
+Hier nutzte man ein Fly-By Manöver um die Sonde auf eine asymptotische Fluchtgeschwindigkeit von 11,322 km/s
+(Gesamtgeschwindigkeit 36,7 km/s) zu beschleunigen um das Sonnensystem in Richtung des Sterns Aldebaran
+(Laut Zeitplan sollte die Sonde diese Region in ungefähr 2 Millionen Jahren erreichen[\#1]) zu verlassen.
+Pioneer 11 startete am 6. April 1973 ebenfalls Richtung Jupiter, den sie am 2. Dezember 1974 erreichte.
+Das dort durchgeführte Fly-By Manöver brachte sie auf eine Bahn, die Pioneer 11 zunächst wieder innerhalb der Jupiter-Bahn führte,
+um dann aber am 1. September 1979 den Saturn zu erreichen. In einem weiteren Fly-By Manöver,
+bei dem die Sonde die Ringe des Saturns unbeschadet durchquert hat, wurde sie auf eine asymptotische Fluchtgeschwindigkeit
+von 10,450 km/s gebracht. Pioneer 11 steuert auf die Konstellation Aquila zu,
+wo sie in ungefähr 4 Millionen Jahren eintreffen wird.
+Die Relationen der Flugbahnen der Sonden Pioneer 10 und 11, sowie Voyager 1 und 2 sind in Abb. \$1 zu erkennen.
 
-Die Sonden Pioneer 10 und Pioneer 11 waren die ersten Missionen, die die äußeren Planeten unseres Sonnensystems erforschen sollten. 
+Abb. \$1 (groß)
+
+Obwohl Pioneer 10 und 11 nur auf eine Betriebszeit von 21 Monate ausgelegt waren,
+sendete Pioneer 10 Messdaten bis zum 27. April 2002. Das letzte Signal von Pioneer 10 erreichte die Erde am 23. Januar 2003.
+Das letzte Signal von Pioneer 11 wurde jedoch deutlich früher, am 24. November 1995 empfangen,
+da durch das zweite Fly-By Manöver am Saturn sehr viel mehr Energie verbraucht wurde.
 
 
 \section{Die Anormalie}
@@ -63,14 +81,29 @@ Fehlerminimierung und Ausschluss einiger Phänomenologischer Fehler ermöglicht.
 \subsection{Theoretische Berechnungen}
 Die ursprüngliche Navigationsberechnung erfolgte durch das Orbital Determination Program (ODP) des JPL.
 Hierbei wird die Bahn im Rahmen des relativistischen Einstein-Infeld-Hoffmann-Modells (EIH Modell)
-bis einschließlich zur Ordnung $(\frac{v}{c})^4$ berechnet. Berücksichtigt wurden dabei die Sonne,
-die 9 Planeten als Punktmassen, der Mond, die größten Asteroiden (ca. 0,2 Erdmassen) und Kometen, Platentektonik der Erde, uvm.
+bis einschließlich zur Ordnung $(\frac{v}{c})^4$ berechnet.
+Die Gravitation der Sonne, der neun Planeten und des Monds, wurden dabei als isotrope Punktmassen mit dem
+PPN-Formalismus (parameterized post-Newtonian formalism) beschrieben\cite{Anderson2002}. Die Gravitation der größten
+Asteroiden (ca. 0,2
+Erdmassen) und Kometen wurden darüberhinaus gemäß des Newtonschen Gravitationsgesetz mit einberechnet. Auch die
+``Terrestrial and lunar figure effects``, die Gezeiten der Erde und die physische Libration wurde mit berücksichtigt.
+Die Propagation des Lichtes wurde relativistisch bis zu Ordnung $(\frac{v}{c})^2$ genau berechnet.
+Darüber hinaus wurde der Einfluss von Sonnenstrahlung und Sonnenwind berücksichtigt.
+% Model of internal non–gravitational forces (->Vortrag) ?
 %Zu benutzen: Anderson 2002 + Physikjournal + Vorträge
+
 Eine unabhängige Überprüfung erfolgte durch durch den CHASMP/POEAS-Code des Aerospace Corporation.
-Eine dritte bestätigung folge später durch einen von C. Markward (Goddard Space Flight Center, GFSC) geschriebenen Code.
+Eine dritte Bestätigung folge später durch einen von C. Markward (Goddard Space Flight Center, GFSC) geschriebenen Code.
 Im Jahr 2008 entwickelte Groupe Anomalie Pioneer (GAP) eine eigene Software namens ODYSSEY,
-mit welcher die Anomalie ebenfals bestätigt werden konnte.
-Und durch Oslo?
+mit welcher die Anomalie ebenfalls bestätigt werden konnte.
+Eine weitere Bestätigung erfolgte durch den Orbit determination code der Universität Oslo.
+
+\rem{
+ Wohin mit ''Model of observation stations``?
+}
 
 
+
+\bibliography{lit}{}
+\bibliographystyle{hplain}
 \end{document}
