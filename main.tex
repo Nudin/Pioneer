@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage{cite}
+\usepackage[ngerman]{babel}
 
 \newcommand{\rem}[1]{}
 
@@ -47,8 +48,9 @@ da durch das zweite Fly-By Manöver am Saturn sehr viel mehr Energie verbraucht 
 \subsection{Frequenzmessung}
 
 Die Geschwindigkeitsmessung der Pioneersonden erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen.
-Von den Bodenstationen des Deep Space Networks wurden Radiowellen mit bekannter Frequenz zum Satelliten gesendet (uplink).
-Der Satelit empfängt das Signal dopplerverschoben:
+Von den Bodenstationen des Deep Space Networks (in Goldstone/USA, Madrid/Spanien und Canberra/Australien) wurden
+Radiowellen mit bekannter Frequenz (S-Band, ~2,11 Ghz) zum Satelliten gesendet (uplink).
+Der Satellit empfängt das Signal dopplerverschoben:
 \begin{equation}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
 \end{equation}
@@ -58,6 +60,7 @@ mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
 \nu'_R = \nu_R\frac{240}{211}
 \end{equation}
 Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
+% ToDo: Verschiebung durch Rotation der Sonde (-> Physik Journal)
 Das Empfangene Signal ist also zweifach doppleverschoben und um den Faktor $\frac{240}{221}$ verschoben.
 \begin{equation}
  \nu'_E = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c}) \cdot \frac{240}{211}\nu_R \, = \, \frac{1}{1-\frac{v^2}{c^2}}(1-\frac{v}{c})^2 \cdot \frac{240}{211} \nu_E
@@ -98,9 +101,6 @@ Im Jahr 2008 entwickelte Groupe Anomalie Pioneer (GAP) eine eigene Software name
 mit welcher die Anomalie ebenfalls bestätigt werden konnte.
 Eine weitere Bestätigung erfolgte durch den Orbit determination code der Universität Oslo.
 
-\rem{
- Wohin mit ''Model of observation stations``?
-}
 
 \subsection{Die Anomalie}
 Ab 1979 beobachtet man zwischen der berechneten und der gemessenen Frequenzverschiebung eine anormale Blauverschiebung.
@@ -111,7 +111,7 @@ Die Analyse der Daten von 1987 bis 1998 zeigte eine zeitlich konstante Zunahme d
 wobei $\Delta\nu=[\nu_{Messung}-\nu_{Modell}]'_E$. Diese konstante Zunahme der Blauverschiebung wird meist als eine
 Beschleunigung in Richtung Sonne interpretiert.
 \begin{equation}
-  a_{Pioneer}=\frac{v}{t}=-\frac{1}{2}\frac{c}{\nu}\frac{d\Delta\nu}{dt} = (8,74\pm1,33)\cdot10^{-8}\frac{cm}{s^2}
+  a_{Pioneer}=\frac{dv}{dt}=-\frac{1}{2}\frac{c}{\nu_E}\frac{d\Delta\nu}{dt} = (8,74\pm1,33)\cdot10^{-8}\frac{cm}{s^2}
 \end{equation}
 \rem{
 oder
@@ -120,8 +120,9 @@ oder
 \end{equation}
 }
 Andere Arbeiten mit unterschiedlichen ODPs bestimmten die Beschleunigung zu $(7,70
-\pm0,02)\cdot10^{-8}\frac{cm}{s^2}$\footnote{Hier ist jedoch nur der statistische Fehler angegeben} (Markwardt,
-2002)\cite{Markwardt2002} beziehungsweise $(8,4\pm0,1)\cdot10^{-8}\frac{cm}{s^2}$ (Levy et al., 2008)\cite{Levy2008}.
+\pm0,02)\cdot10^{-8}\frac{cm}{s^2}$ (Markwardt,
+2002)\footnote{Hier ist jedoch nur der statistische Fehler angegeben}\cite{Markwardt2002} beziehungsweise
+$(8,4\pm0,1)\cdot10^{-8}\frac{cm}{s^2}$ (Levy et al., 2008)\cite{Levy2008}.
 Wir wollen uns im folgenden jedoch – wie auch praktisch jede Arbeit der Fachliteratur – auf den oben angegebenen von
 Anderson et al. berechneten Wert beschränken.
 
@@ -131,6 +132,15 @@ Beschleunigung ist mit einer Auflösung von 3° bisher noch recht ungenau bestim
 
 %\subsection{Periodisches Verhalten der Anomalie}
 %\subsection{Analysen früherer und späterer Daten}
+
+
+% Noch unterzubringen ist:
+%% - S-Band ist für 3-D wenig geeignet. (Route to Understanding)
+%% - ''Model of observation stations``?
+%% - ...
+
+% ToFix:
+%% - Quellen: And -> und
 
 \bibliography{lit}{}
 \bibliographystyle{hplain}
