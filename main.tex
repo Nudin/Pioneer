@@ -57,11 +57,11 @@ Parabolantenne von 5 bis 8 U/min ausgeglichen.
 
 
 \section{Die Anomalie}
-\subsection{Frequenzmessung}
+\subsection{Navigation und Geschwindigkeitsmessung}
+Die Navigation der Pioneersonden erfolgte mithilfe der Antennen des Deep Space Network (DSN) in Goldstone/USA, Madrid/Spanien und Canberra/Australien.
+Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen:
 
-Die Geschwindigkeitsmessung der Pioneersonden erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen.
-Von den Bodenstationen des Deep Space Networks (in Goldstone/USA, Madrid/Spanien und Canberra/Australien) wurden
-Radiowellen mit bekannter Frequenz (S-Band, ~2,11 Ghz) zum Satelliten gesendet (uplink).
+Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink).
 Der Satellit empfängt das Signal dopplerverschoben:
 \begin{equation}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
@@ -73,7 +73,7 @@ mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
 \end{equation}
 Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
 % ToDo: Verschiebung durch Rotation der Sonde (-> Physik Journal)
-Das Empfangene Signal ist also zweifach doppleverschoben und um den Faktor $\frac{240}{221}$ verschoben.
+Das empfangene Signal ist also zweifach dopplerverschoben und um den Faktor $\frac{240}{221}$ verschoben.
 \begin{equation}
  \nu'_E = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c}) \cdot \frac{240}{211}\nu_R \, = \, \frac{1}{1-\frac{v^2}{c^2}}(1-\frac{v}{c})^2 \cdot \frac{240}{211} \nu_E
 \end{equation}
@@ -91,7 +91,11 @@ Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit
  2d = c \Delta t
 \end{equation}
 Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
-Fehlerminimierung und Ausschluss einiger Phänomenologischer Fehler ermöglicht.
+Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht.
+Die Frequenzmessung erfolgte durch Zählen der Schwingungen und Vergleich mit einer Atomuhr.\cite{Nieto2007} % ``Schwingungen'' als Formulierung überprüfen
+Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für das Thema relevantere – 
+Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
+
 
 \subsection{Theoretische Berechnungen}
 Die ursprüngliche Navigationsberechnung erfolgte durch das Orbital Determination Program (ODP) des JPL.
@@ -147,8 +151,8 @@ Beschleunigung ist mit einer Auflösung von 3° bisher noch recht ungenau bestim
 
 
 % ToDo:
-%% - S-Band ist für 3-D wenig geeignet. (Route to Understanding)  ->
-%% - ''Model of observation stations``? -> Messung
+%% - S-Band ist für 3-D wenig geeignet. (Route to Understanding)  -> ?
+%% - ''Model of observation stations`` -> Messung
 %% - Navigation -> anfang der Messung
 %% - Abgrenzung klassische Erklärungen mit Flo
 %% - Abgrenzung Navigation <> Einleitung
