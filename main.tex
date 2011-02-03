@@ -61,18 +61,18 @@ Parabolantenne von 5 bis 8 U/min ausgeglichen.
 Die Navigation der Pioneersonden erfolgte mithilfe der Antennen des Deep Space Network (DSN) in Goldstone/USA, Madrid/Spanien und Canberra/Australien.
 Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen:
 
+Wir nehmen im folgenden an, dass die Sonde sich näherungsweiße radial von uns wegbewegt.
 Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink).
 Der Satellit empfängt das Signal dopplerverschoben:
 \begin{equation}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
 \end{equation}
-und antwortet mittels einer 8-Watt Sendeanlage und eines Transponders
+und antwortet unmittelbar mittels einer 8-Watt Sendeanlage und eines Transponders
 mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
 \begin{equation}
 \nu'_R = \nu_R\frac{240}{211}
 \end{equation}
 Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
-% ToDo: Verschiebung durch Rotation der Sonde (-> Physik Journal)
 Das empfangene Signal ist also zweifach dopplerverschoben und um den Faktor $\frac{240}{221}$ verschoben.
 \begin{equation}
  \nu'_E = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c}) \cdot \frac{240}{211}\nu_R \, = \, \frac{1}{1-\frac{v^2}{c^2}}(1-\frac{v}{c})^2 \cdot \frac{240}{211} \nu_E
@@ -95,7 +95,13 @@ Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht.
 Die Frequenzmessung erfolgte durch Zählen der Schwingungen und Vergleich mit einer Atomuhr.\cite{Nieto2007} % ``Schwingungen'' als Formulierung überprüfen
 Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für das Thema relevantere – 
 Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
-
+Für die genauere beschtimmung der bahn muss man einige weitere Einflüße berücksichtigen:
+...
+% Verschiebung durch Rotation der Sonde (-> Physik Journal)
+% Koordinatensysteme, Zeitsystem
+% Gezeiten, Erdbewegung
+% Bestimmung der Position aus den dopplerdaten aufgrund der Eigenrotation der Erde
+% usw.
 
 \subsection{Theoretische Berechnungen}
 Die ursprüngliche Navigationsberechnung erfolgte durch das Orbital Determination Program (ODP) des JPL.
@@ -103,13 +109,13 @@ Hierbei wird die Bahn im Rahmen des relativistischen Einstein-Infeld-Hoffmann-Mo
 bis einschließlich zur Ordnung $(\frac{v}{c})^4$ berechnet.
 Die Gravitation der Sonne, der neun Planeten und des Monds, wurden dabei als isotrope Punktmassen mit dem
 PPN-Formalismus (parameterized post-Newtonian formalism) beschrieben\cite{Anderson2002}. Die Gravitation der größten
-Asteroiden (ca. 0,2
-Erdmassen) und Kometen wurden darüberhinaus gemäß des Newtonschen Gravitationsgesetz mit einberechnet. Auch die
-``Terrestrial and lunar figure effects``, die Gezeiten der Erde und die physische Libration wurde mit berücksichtigt.
+Asteroiden (ca. 0,2 Erdmassen) und Kometen wurden darüberhinaus gemäß des Newtonschen Gravitationsgesetz mit einberechnet.
+
+%Auch die ``Terrestrial and lunar figure effects``, die Gezeiten der Erde und die physische Libration wurde mit berücksichtigt.
 Die Propagation des Lichtes wurde relativistisch bis zu Ordnung $(\frac{v}{c})^2$ genau berechnet.
-Darüber hinaus wurde der Einfluss von Sonnenstrahlung und Sonnenwind berücksichtigt.
-% Model of internal non–gravitational forces (->Vortrag) ?
 %Zu benutzen: Anderson 2002 + Physikjournal + Vorträge
+Darüberhinaus wurden bei etlichen dieser Berechnungen eine Reihe von weiteren Einflüßen mit berücksichtigt, welche wir weiter unten % unter klassische Erklärungen
+erläutern werden.\footnote{An dieser Stelle werden oft auch die Einflüße auf die Beobachtung genannt, welche wir jedoch bereits im vorhergehenden Abschnitt besprochen haben.}
 
 Eine unabhängige Überprüfung erfolgte durch durch den CHASMP/POEAS-Code des Aerospace Corporation.
 Eine dritte Bestätigung folge später durch einen von C. Markward (Goddard Space Flight Center, GFSC) geschriebenen Code.
@@ -120,7 +126,7 @@ Eine weitere Bestätigung erfolgte durch den Orbit determination code der Univer
 
 \subsection{Die Anomalie}
 Ab 1979 beobachtet man zwischen der berechneten und der gemessenen Frequenzverschiebung eine anormale Blauverschiebung.
-Die Analyse der Daten von 1987 bis 1998 zeigte eine zeitlich konstante Zunahme dieser Blauverschiebung von
+Die Analyse der Daten von 1987 bis 1998 – Endfernungen von 20 bis 70 AU – zeigte eine zeitlich konstante Zunahme dieser Blauverschiebung von
 \begin{equation}
   \frac{d\Delta\nu}{dt}=(5,99\pm0,01)\cdot10^{-9}\frac{Hz}{s}
 \end{equation}
@@ -142,12 +148,19 @@ $(8,4\pm0,1)\cdot10^{-8}\frac{cm}{s^2}$ (Levy et al., 2008)\cite{Levy2008}.
 Wir wollen uns im folgenden jedoch – wie auch praktisch jede Arbeit der Fachliteratur – auf den oben angegebenen von
 Anderson et al. berechneten Wert beschränken.
 
+Der Wert mag zwar klein erscheinen, doch ist seine größenordnung nur das $10^{-5}$ fache der Newtonschen Beschleunigung,
+und er ist kleiner als die Faktoren $U/c^2$,$v^2/c^2$,$r a/c^2$ zur relativistischen Korrektur der newtonschen Dynamik. % richtig?
+Seit 1979 ist die Sonde um fast eine halbe Million Kilometer von der Berechneten Bahn abgewichen:
+\begin{equation}
+  \Delta x= \frac12 \cdot a_p \cdot (2011-1979) a\approx 445.000 km
+\end{equation}
+
 Diese Frequenzverschiebung wurde mit nur maximal 3\% Unterschied bei beiden Pioneer Sonden unabhängig von einander
 gefunden. Das anomale Signal variiert über den analysierten Zeitrum um nur maximal 3,5\%. Die Richtung der
-Beschleunigung ist mit einer Auflösung von 3° bisher noch recht ungenau bestimmt worden.
+Beschleunigung ist mit einer Auflösung von 3° bisher noch recht ungenau bestimmt worden. Es ist daher nicht möglich sicher zu sagen ob die Beschleunigung
+in Richtung Sonne, Erde, negativer Geschwindigkeit oder Drehachse geht, dazu später mehr.
 
 %\subsection{Periodisches Verhalten der Anomalie}
-%\subsection{Analysen früherer und späterer Daten}
 
 
 % ToDo:
