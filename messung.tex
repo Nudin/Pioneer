@@ -1,0 +1,52 @@
+
+\subsection{Navigation und Geschwindigkeitsmessung}
+Die Navigation der Pioneersonden erfolgte mithilfe der Antennen des Deep Space Network (DSN) in Goldstone/USA,
+Madrid/Spanien und Canberra/Australien.
+Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über
+die Zwei-Wege-Dopplerverschiebung von Radiowellen:
+
+Wir nehmen im folgenden an, dass die Sonde sich näherungsweiße radial von uns wegbewegt.
+Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink).
+Der Satellit empfängt das Signal dopplerverschoben:
+\begin{equation}
+ \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
+\end{equation}
+und antwortet unmittelbar mittels einer 8-Watt Sendeanlage und eines Transponders
+mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
+\begin{equation}
+\nu'_R = \nu_R\frac{240}{211}
+\end{equation}
+Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
+Das empfangene Signal ist also zweifach dopplerverschoben und um den Faktor $\frac{240}{221}$ verschoben.
+\begin{equation}
+ \nu'_E = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c}) \cdot \frac{240}{211}\nu_R \, = \,
+\frac{1}{1-\frac{v^2}{c^2}}(1-\frac{v}{c})^2 \cdot \frac{240}{211} \nu_E
+\end{equation}
+Die relative Verschiebung ergibt sich also zu
+\begin{equation}
+ \frac{\nu'_E-\nu_E}{\nu_E} = \frac{\frac{19}{221}- \frac{461}{221}\frac{v}{c}}{1+\frac{v}{c}}.
+\end{equation}
+In vielen Quellen wird die konstante Frequenzverschiebung durch die Elektronik der Quelle vernachlässigt, was zur
+einfacheren Form von
+\begin{equation}
+ \frac{\nu'_E-\nu_E}{\nu_E} \approx -2\frac{v/c}{1+v/c} \approx -2 \frac{v}{c}
+\end{equation}
+führt.
+Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit $\Delta t$ des Signales bestimmen:
+\begin{equation}
+ 2d = c \Delta t
+\end{equation}
+Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
+Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht.
+Die Frequenzmessung erfolgte durch Zählen der Schwingungen und Vergleich mit einer Atomuhr.\cite{Nieto2007} %
+``Schwingungen'' als Formulierung überprüfen
+Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für
+das Thema relevantere – 
+Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
+Für die genauere beschtimmung der bahn muss man einige weitere Einflüße berücksichtigen:
+...
+% Verschiebung durch Rotation der Sonde (-> Physik Journal)
+% Koordinatensysteme, Zeitsystem
+% Gezeiten, Erdbewegung
+% Bestimmung der Position aus den dopplerdaten aufgrund der Eigenrotation der Erde
+% usw.
