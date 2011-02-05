@@ -125,7 +125,7 @@ FUNCTION {not}
   if$
 }
 
-FUNCTION {and}
+FUNCTION {und}
 {   'skip$
     { pop$ #0 }
   if$
@@ -147,7 +147,7 @@ FUNCTION {new.block.checka}
 FUNCTION {new.block.checkb}
 { empty$
   swap$ empty$
-  and
+  und
     'skip$
     'new.block
   if$
@@ -163,7 +163,7 @@ FUNCTION {new.sentence.checka}
 FUNCTION {new.sentence.checkb}
 { empty$
   swap$ empty$
-  and
+  und
     'skip$
     'new.sentence
   if$
@@ -201,7 +201,7 @@ FUNCTION {format.names}
 	      if$
 	      t "others" =
 		{ " et~al." * }
-		{ " and " * t * }
+		{ " und " * t * }
 	      if$
 	    }
 	  if$
@@ -317,7 +317,7 @@ FUNCTION {format.bvolume}
 	'skip$
 	{ " of " * series emphasize * }
       if$
-      "volume and number" number either.or.check
+      "volume und number" number either.or.check
     }
   if$
 }
@@ -360,7 +360,7 @@ FUNCTION {multi.page.check}
   #0 'multiresult :=
     { multiresult not
       t empty$ not
-      and
+      und
     }
     { t #1 #1 substring$
       duplicate$ "-" =
@@ -437,8 +437,8 @@ FUNCTION {format.in.ed.booktitle}
 FUNCTION {empty.misc.check}
 { author empty$ title empty$ howpublished empty$
   month empty$ year empty$ note empty$
-  and and and and and
-  key empty$ not and
+  und und und und und
+  key empty$ not und
     { "all relevant fields are empty in " cite$ * warning$ }
     'skip$
   if$
@@ -488,7 +488,7 @@ FUNCTION {format.crossref.editor}
 	'skip$
 	{ editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
 	    { " et~al." * }
-	    { " and " * editor #2 "{vv~}{ll}" format.name$ * }
+	    { " und " * editor #2 "{vv~}{ll}" format.name$ * }
 	  if$
 	}
       if$
@@ -570,10 +570,10 @@ FUNCTION {article}
 FUNCTION {book}
 { output.bibitem
   author empty$
-    { format.editors "author and editor" output.check }
+    { format.editors "author und editor" output.check }
     { format.authors output.nonnull
       crossref missing$
-	{ "author and editor" editor either.or.check }
+	{ "author und editor" editor either.or.check }
 	'skip$
       if$
     }
@@ -618,10 +618,10 @@ FUNCTION {booklet}
 FUNCTION {inbook}
 { output.bibitem
   author empty$
-    { format.editors "author and editor" output.check }
+    { format.editors "author und editor" output.check }
     { format.authors output.nonnull
       crossref missing$
-	{ "author and editor" editor either.or.check }
+	{ "author und editor" editor either.or.check }
 	'skip$
       if$
     }
@@ -630,14 +630,14 @@ FUNCTION {inbook}
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
-      format.chapter.pages "chapter and pages" output.check
+      format.chapter.pages "chapter und pages" output.check
       new.block
       format.number.series output
       new.sentence
       publisher "publisher" output.check
       address output
     }
-    { format.chapter.pages "chapter and pages" output.check
+    { format.chapter.pages "chapter und pages" output.check
       new.block
       format.book.crossref output.nonnull
     }
@@ -892,7 +892,7 @@ MACRO {acta} {"Acta Informatica"}
 
 MACRO {cacm} {"Communications of the ACM"}
 
-MACRO {ibmjrd} {"IBM Journal of Research and Development"}
+MACRO {ibmjrd} {"IBM Journal of Research und Development"}
 
 MACRO {ibmsj} {"IBM Systems Journal"}
 
@@ -907,7 +907,7 @@ MACRO {ipl} {"Information Processing Letters"}
 
 MACRO {jacm} {"Journal of the ACM"}
 
-MACRO {jcss} {"Journal of Computer and System Sciences"}
+MACRO {jcss} {"Journal of Computer und System Sciences"}
 
 MACRO {scp} {"Science of Computer Programming"}
 
@@ -923,7 +923,7 @@ MACRO {toms} {"ACM Transactions on Mathematical Software"}
 
 MACRO {toois} {"ACM Transactions on Office Information Systems"}
 
-MACRO {toplas} {"ACM Transactions on Programming Languages and Systems"}
+MACRO {toplas} {"ACM Transactions on Programming Languages und Systems"}
 
 MACRO {tcs} {"Theoretical Computer Science"}
 
@@ -957,7 +957,7 @@ FUNCTION {sort.format.names}
 	'skip$
       if$
       s nameptr "{vv{ } }{ll{ }}{  ff{ }}{  jj{ }}" format.name$ 't :=
-      nameptr numnames = t "others" = and
+      nameptr numnames = t "others" = und
 	{ "et al" * }
 	{ t sortify * }
       if$
