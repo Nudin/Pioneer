@@ -43,9 +43,22 @@ Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wol
 das Thema relevantere – 
 Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
 Für die genauere Bestimmung der bahn muss man einige weitere Einflüsse berücksichtigen:
-...
-% Verschiebung durch Rotation der Sonde (-> Physik Journal)
-% Koordinatensysteme, Zeitsystem
-% Gezeiten, Erdbewegung
-% Bestimmung der Position aus den dopplerdaten aufgrund der Eigenrotation der Erde
-% usw.
+
+Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden. %mehr
+
+Gerechnet wurde in der Standart-Epoche J200.0. %mehr
+
+Die Bewegung der wurde in baryzentrischen Koordinaten gemäß ICRF beschrieben, % genauer
+da die Erde jedoch sehr dynamisch ist muss – für eine hinreichend genaue Bestimmung der Sondenbahn –
+die Bewegung der Antenen auf der Erdoberfläche unter der Berücksichtigung von Prezission, Nutation,
+siderischen Rotation, Polarbewegung, der Gezeitenkräfte und Platentektonischen Bewegungen berücksichtigt werden.
+Die Angaben zu Abbremsung, sowie zur unregelmäßigkeit der Rotation, zur Polbewegung, die Love numbers\footnote{FIXME} und der Chandler wobble\footnote{Spiralfomiges Schwingen der Erdachse mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären?
+wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeit von am Mond von Spiegeln reflektierten Laserpulsen gemessen}, Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von Laserpulsen zwischen einem Satelit und der Bodesstation gemessen} und Very Long Baseline Interferometry (VLBI)\footnote{Dabei werden von zwei, interkontinental weit entfernten Radioteleskopen, die Signale inklusive Zeitreferenz gespeichert und die Interferenz dieser Signale am Computer stimuliert} bestimmt.
+Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt, zu welchen die Earth Orientation Parameters
+(EOP) des JPL eine große Rolle beitragen.
+
+Aufgrund der Eigenrotation der Erde läßt sich andererseits aus den dopplerdaten auch die % – 3 dimensionale –
+Entfernung der Sonde berechnen. %Aber nich besonders gut, wie wir später sehen werden	 	% mehr
+
+% Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte.
+
