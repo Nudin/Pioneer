@@ -44,7 +44,8 @@ das Thema relevantere –
 Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
 Für die genauere Bestimmung der bahn muss man einige weitere Einflüsse berücksichtigen:
 
-Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden. %mehr
+Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden.
+Dies führt pro Umdrehung der Sonde zu einer Phasenverschiebung von $(1+240/221) 2\pi$. %mehr, richtig?
 
 Gerechnet wurde in der Standart-Epoche J200.0. %mehr
 
@@ -61,10 +62,16 @@ wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LL
 Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt, zu welchen die Earth Orientation Parameters
 (EOP) des JPL eine große Rolle beitragen.\cite{Anderson2002}
 
-Aufgrund der Eigenrotation der Erde läßt sich andererseits aus den dopplerdaten auch die % – 3 dimensionale –
-Entfernung der Sonde berechnen. %Aber nich besonders gut, wie wir später sehen werden	 	% mehr
+Aufgrund der Eigenrotation der Erde läßt sich andererseits aus der Modulation der  Doppler-Daten auch die
+% – 3 dimensionale –
+Position der Sonde berechnen. %Aber nich besonders gut, wie wir später sehen werden	 	% mehr
 
-% Die Zeitumrechnung fehlt
+Die Beobachtungen der Bodenstationen wurden mit Zeitangaben nach der Universal Time 1 (UT1)\footnote{Durch astronomische
+Beobachtung gewonnene und um Einflüsse der Polschwankungen (mit Perioden über 7 Tage) korrigierte, mittlere Ortszeit des
+durch die Sternwarte von Greenwich führenden Nullmeridians} parametrisiert gespeichert. Für die Analysen und
+Berechnungen musste diese Zeitangaben einerseits in die Internationale Atomzeit TAI, andererseits auch in die
+Ephemeridenzeit umgerechnet werden. Auch hierfür verwendete man äußerst genaue Angaben zu Position, Geschwindigkeit und
+Gravitationspotential der Antennen.\cite{Dittus2006}
 
 % Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte.
 
