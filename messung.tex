@@ -69,16 +69,24 @@ Zeitreferenz gespeichert und die Interferenz dieser Signale am Computer stimulie
 Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt, zu welchen die Earth Orientation Parameters
 (EOP) des JPL eine große Rolle beitragen.\cite{Anderson2002}
 
-Aufgrund der Eigenrotation der Erde lässt sich andererseits aus der Modulation der  Doppler-Daten auch die
-% – 3 dimensionale –
-Position der Sonde berechnen. %Aber nich besonders gut, wie wir später sehen werden	 	% mehr
-
 Die Beobachtungen der Bodenstationen wurden mit Zeitangaben nach der Universal Time 1 (UT1)\footnote{Durch astronomische
 Beobachtung gewonnene und um Einflüsse der Polschwankungen (mit Perioden über 7 Tage) korrigierte, mittlere Ortszeit des
 durch die Sternwarte von Greenwich führenden Nullmeridians} parametrisiert gespeichert. Für die Analysen und
 Berechnungen musste diese Zeitangaben einerseits in die Internationale Atomzeit TAI, andererseits auch in die
 Ephemeridenzeit umgerechnet werden. Auch hierfür verwendete man äußerst genaue Angaben zu Position, Geschwindigkeit und
 Gravitationspotential der Antennen.\cite{Dittus2006}
+
+An dieser Stelle sei erwähnt, das die beiden vorangegangenen Abschnitte sich auf die Berechnungen von Anderson et al. auf dem Jahr 2002 beziehen.
+Wir werden im Nächsten Kapitel sehen, dass es merdere unabhängige Überprüfungen gegeben hat.
+Diese verwenden zum Teil andere Koordinaten- und Zeitsysteme.
+So rechnet das Progeramm ODESSEY mit der Barycentric Coordinate Time (TCB) im Barycentric Celestial Reference System (BCRS).
+Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da die unterschiede gering sind und
+die meisten fortführenden Arbeiten auf die Berechnngen von Anderson et al. aufsetzen.	%fortführende Arbeiten?
+
+
+Aufgrund der Eigenrotation der Erde lässt sich andererseits aus der Modulation der  Doppler-Daten auch die
+% – 3 dimensionale –
+Position der Sonde berechnen. %Aber nich besonders gut, wie wir später sehen werden	 	% mehr
 
 Mann hat sogar einen möglichen Einfluss von mechanischer Deformation der Antennen der Bodenstationen durch ihr eigenes Gewicht,
 Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbezogen.\cite{Dittus2006} % mehr, Quelle (note: <10^-5 a_p)
