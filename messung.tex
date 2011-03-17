@@ -6,7 +6,8 @@ Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie v
 die Zwei-Wege-Dopplerverschiebung von Radiowellen:
 
 Wir nehmen im folgenden an, dass die Sonde sich näherungsweise radial von uns wegbewegt.
-Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink).
+Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink). Die Frequenz wird mithilfe eines Wasserstoff-Masers erzeugt.
+Damit wird eine äußerst präzise und stabile Frequenz von 5 MHz und 10 MHz erzeugt. Im Digital Controlled Oscillator (DCO), werden diese Frequenz verwendet um mit frequenzmultipliern ein Signal mit ~22 MHz zu erzeugten, welches dann mit dem Faktor 96 multipliziert wird um das zu sendende Signal von 22 GHz zu erhalten.\cite{Anderson2002}
 Der Satellit empfängt das Signal dopplerverschoben:
 \begin{equation}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
@@ -16,6 +17,7 @@ mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
 \begin{equation}
 \nu'_R = \nu_R\frac{240}{211}
 \end{equation}
+Dies ist notwendig, da es sich bei den Radiosignalen um kohärente Wellen handelt und man so Verfälschungen durch Interferenz der Hin- und Rücklaufenden Wellen vermeidet.\cite{Anderson2002}
 Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
 Das empfangene Signal ist also zweifach dopplerverschoben und um den Faktor $\frac{240}{221}$ verschoben.
 \begin{equation}
@@ -36,13 +38,21 @@ Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit
 \begin{equation}
  2d = c \Delta t
 \end{equation}
+Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder demoduliert und filtert es um es beim Down-link wieder hinein zu modulieren.
+Dabei muss man beachtet, das durch das ständige senden solcher Modulierten Signale und die langen Laufzeiten es zu Verwelchslungsgefahr zwischen unterschiedlichen Signalen kommen kann. Dies muss von den Analyseprogrammen erkannt werden.
+
 Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
-Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht.
+Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht. Nicht zuletzt kann man damit durch Frequenzfehler kommende falsche Dopplerdaten erkennen.\cite{Andeson2002}
+
+Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen.Auch dies fließt in die Analysen mit ein.\cite{Anderson2002}
+%Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
+
 Die Frequenzmessung erfolgte durch Zählen der Perioden und Vergleich mit einer Atomuhr.\cite{Nieto2007} %``Schwingungen'' als Formulierung überprüfen -  Perioden
-Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für
-das Thema relevantere – 
+
+Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für das Thema relevantere – 
 Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
-Für die genauere Bestimmung der bahn muss man einige weitere Einflüsse berücksichtigen:
+
+Für die genauere Bestimmung der Bahn muss man einige weitere Einflüsse berücksichtigen:
 
 Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden.
 Dies führt pro Umdrehung der Sonde zu einer Phasenverschiebung von $(1+240/221) 2\pi$. %mehr, richtig?
@@ -58,14 +68,10 @@ Die Bewegung der wurde in baryzentrischen Koordinaten gemäß ICRF beschrieben, 
 da die Erde jedoch sehr dynamisch ist muss – für eine hinreichend genaue Bestimmung der Sondenbahn –
 die Bewegung der Antennen auf der Erdoberfläche unter der Berücksichtigung von Prezission, Nutation,
 siderischen Rotation, Polarbewegung, der Gezeitenkräfte und Platentektonischen Bewegungen berücksichtigt werden.
-Die Angaben zu Abbremsung, sowie zur Unregelmäßigkeit der Rotation, zur Polbewegung, die Love numbers\footnote{Von AEH
-Love beschriebene ``Proportionalitätsfaktoren zwischen den verschiedenen Verzerrungen sowie dem sich einstellenden
-Gravitationsfeld einer sphärisch symmetrischen, nichtrotierenden elastischen isotropen Kugel und einem äußerem an der
-Kugel angreifenden Grafitationsgradienten''\cite{Dittus2006}} und der Chandler wobble\footnote{Spiralfomiges Schwingen
+Die Angaben zu Abbremsung, sowie zur Unregelmäßigkeit der Rotation, zur Polbewegung, die Love numbers\footnote{Von AEH Love beschriebene ``Proportionalitätsfaktoren zwischen den verschiedenen Verzerrungen sowie dem sich einstellenden Gravitationsfeld einer sphärisch symmetrischen, nichtrotierenden elastischen isotropen Kugel und einem äußerem an der Kugel angreifenden Grafitationsgradienten''\cite{Dittus2006}} und der Chandler wobble\footnote{Spiralfomiges Schwingen
 der Erdachse mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären? 0,7 Bogensekunden
-wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeit von am Mond von
-Spiegeln reflektierten Laserpulsen gemessen}, Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von
-Laserpulsen zwischen einem Satellit und der Bodenstation gemessen} und Very Long Baseline Interferometry
+wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeit von am Mond von Spiegeln reflektierten Laserpulsen gemessen},
+Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von Laserpulsen zwischen einem Satellit und der Bodenstation gemessen} und Very Long Baseline Interferometry
 (VLBI)\footnote{Dabei werden von zwei, interkontinental weit entfernten Radioteleskopen, die Signale inklusive
 Zeitreferenz gespeichert und die Interferenz dieser Signale am Computer stimuliert} bestimmt.
 Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt, zu welchen die Earth Orientation Parameters
@@ -85,10 +91,6 @@ So rechnet das Progeramm ODESSEY mit der Barycentric Coordinate Time (TCB) im Ba
 Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da die unterschiede gering sind und
 die meisten fortführenden Arbeiten auf die Berechnngen von Anderson et al. aufsetzen.	%fortführende Arbeiten?
 
-
-Aufgrund der Eigenrotation der Erde lässt sich andererseits aus der Modulation der  Doppler-Daten auch die
-% – 3 dimensionale –
-Position der Sonde berechnen. %Aber nich besonders gut, wie wir später sehen werden	 	% mehr
 
 Mann hat sogar einen möglichen Einfluss von mechanischer Deformation der Antennen der Bodenstationen durch ihr eigenes Gewicht,
 Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbezogen.\cite{Dittus2006} % mehr, Quelle (note: <10^-5 a_p)
