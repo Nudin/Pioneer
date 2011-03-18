@@ -42,7 +42,7 @@ Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das vo
 Dabei muss man beachtet, das durch das ständige senden solcher Modulierten Signale und die langen Laufzeiten es zu Verwelchslungsgefahr zwischen unterschiedlichen Signalen kommen kann. Dies muss von den Analyseprogrammen erkannt werden.
 
 Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
-Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht. Nicht zuletzt kann man damit durch Frequenzfehler kommende falsche Dopplerdaten erkennen.\cite{Andeson2002}
+Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht. Nicht zuletzt kann man damit durch Frequenzfehler kommende falsche Dopplerdaten erkennen.\cite{Anderson2002}
 
 Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen.Auch dies fließt in die Analysen mit ein.\cite{Anderson2002}
 %Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
@@ -52,10 +52,23 @@ Die Frequenzmessung erfolgte durch Zählen der Perioden und Vergleich mit einer 
 Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für das Thema relevantere – 
 Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
 
-Für die genauere Bestimmung der Bahn muss man einige weitere Einflüsse berücksichtigen:
+Für die genauere Bestimmung der Bahn muss man einige weitere Einflüsse berücksichtigen, welche wir im folgenden erläutern wollen.
 
-Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden.
-Dies führt pro Umdrehung der Sonde zu einer Phasenverschiebung von $(1+240/221) 2\pi$. %mehr, richtig?
+Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden: Beim "reflektieren" des Signals an der Antenne des drehenden Raumschiffes kommt es zu einer von der Rotationsgeschwindigkeit abhängigen Dopplerverschiebung. Jede Umdrehung der Sonde führt zu einer zusätzlichen Schwingung im Up- und im Down-link. Mit dem Frequenz-Verhältnis von up- und Down-link ergibt sich insgesamt $(1+240/221)$ Schwingungen pro Umdrehung der Sonde.\cite{Anderson2002} %Ist "Schwingungen" das richtige Wort dafür
+Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 verfügbar, als das DSN aufhörte Spinkalibrationen durchzuführen. Für spätere Daten muss der Spin des Raumschiffes durch Interpolation der Datenpunkte und den Daten des Imaging Photo Polarimeter (IPP) berechnet werden. Nach dem Manöver am 6 July 1993 reiche die Energie jedoch nicht mehr für den Betrieb dieses aus. Analysten konnten jedoch noch etwa alle 6 Monate eine grobe Abschätzung des Spins aus Informationen des conscan Manövers erhalten. % Conscan erklären
+%aus Anderson2002:
+%Conscan stands for conical scan. The receiving antenna
+%is moved in circles of angular size corresponding to one
+%half of the beam-width of the incoming signal. This pro-
+%cedure, possibly iterated, allows the correct pointing di-
+%rection of the antenna to be found. When coupled with
+%a maneuver, it can also be used to find the correct point-
+%ing direction for the spacecraft antenna. The precession
+%maneuvers can be open-loop, for orientation towards or
+%away from Earth-pointing, or closed-loop, for homing on
+%the uplink radio-frequency transmission from the Earth.
+Für die Daten nach 1995 wurden der Soinn nicht mehr berechnet, auch wenn dies weiterhin mit den Aufgezeichneten conscan Daten möglich wäre. Außerdem, ist die Spinachse nicht genau identich mit der Phasenachse, weshalb es eine sehr kleine – aber messbare – Sinusfunktion in den Dopplerdaten gibt. Daraus ließe sich ebenfalls die Spinrate für die Daten von nach 1993 berechnen – dies wurde bisher jedoch noch nicht gemacht.\footnote{Zumindest soweit uns bekannt.}
+Die genaue Spinkalibration von Pioneer 11 ist aufgrund des Versagens eines Spin-down-Schubtriebwerks nicht möglich.\cite{Anderson2002}
 
 Zu beachten ist, dass die Propagation des Signales vom Medium beeinflusst wird. Der Einfluss von interplanetarer Materie konnte durch Vergleich
 der Daten mit denen der Cassini-Mission analysiert werden, da diese mehere Frequenzbänder verwendet.\cite{Dittus2006} %mehr, richitg, quelle 
@@ -88,9 +101,7 @@ An dieser Stelle sei erwähnt, das die beiden vorangegangenen Abschnitte sich au
 Wir werden im Nächsten Kapitel sehen, dass es merdere unabhängige Überprüfungen gegeben hat.
 Diese verwenden zum Teil andere Koordinaten- und Zeitsysteme.
 So rechnet das Progeramm ODESSEY mit der Barycentric Coordinate Time (TCB) im Barycentric Celestial Reference System (BCRS).
-Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da die unterschiede gering sind und
-die meisten fortführenden Arbeiten auf die Berechnngen von Anderson et al. aufsetzen.	%fortführende Arbeiten?
-
+Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da die unterschiede gering sind und die meisten fortführenden Arbeiten auf die Berechnngen von Anderson et al. aufsetzen.	%fortführende Arbeiten?
 
 Mann hat sogar einen möglichen Einfluss von mechanischer Deformation der Antennen der Bodenstationen durch ihr eigenes Gewicht,
 Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbezogen.\cite{Dittus2006} % mehr, Quelle (note: <10^-5 a_p)
