@@ -34,18 +34,19 @@ einfacheren Form von
  \frac{\nu'_E-\nu_E}{\nu_E} \approx -2\frac{v/c}{1+v/c} \approx -2 \frac{v}{c}
 \end{equation}
 führt.
-Sind Sender- und Empfängerantenne die selben, so spricht man von einer zwei-Wege-Messung, wenn Sende und Empfängerantennen unterschiedlich sind spricht man von einer drei-Wege-Messung.\cite{Levy2009} %schon oben, als footnote?
+Sind Sender- und Empfängerantenne die selben, so spricht man von einer zwei-Wege-Messung, wenn Sende und Empfängerantennen unterschiedlich sind spricht man von einer drei-Wege-Messung.\cite{Levy2009} Bei den drei-Wege Doppler-Messungen besteht die Gefahr, dass ein unbekannter Zeitunterschied zwischen den Antennen die Messung verfälscht, daher verwendete man diese Daten meist nicht.\cite{Anderson2002} %schon oben, als footnote?
 Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit $\Delta t$ des Signales bestimmen:
 \begin{equation}
  2d = c \Delta t
 \end{equation}
-Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder demoduliert und filtert es um es beim Down-link wieder hinein zu modulieren.
+Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder der Sonde demoduliert und filtert es um es beim Down-link wieder hinein zu modulieren.)
 Dabei muss man beachtet, das durch das ständige senden solcher Modulierten Signale und die langen Laufzeiten es zu Verwelchslungsgefahr zwischen unterschiedlichen Signalen kommen kann. Dies muss von den Analyseprogrammen erkannt werden.
 
 Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
 Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht. Nicht zuletzt kann man damit durch Frequenzfehler kommende falsche Dopplerdaten erkennen.\cite{Anderson2002}
+Allerdings wurde dies laut \cite{Anderson2002} nur bei der Analyse der Daten von Galileo und Ulysses (siehe unten), nicht bei den Pioneersonden verwendet.
 
-Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen.Auch dies fließt in die Analysen mit ein.\cite{Anderson2002}
+Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen.Auch dies fließt in die Analysen mit ein.\cite{Anderson2002} % Wirklich die Phase?
 %Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
 
 Die Frequenzmessung erfolgte durch Zählen der Perioden und Vergleich mit einer Atomuhr.\cite{Nieto2007} %``Schwingungen'' als Formulierung überprüfen -  Perioden
@@ -92,9 +93,9 @@ Zeitreferenz gespeichert und die Interferenz dieser Signale am Computer stimulie
 Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt, zu welchen die Earth Orientation Parameters
 (EOP) des JPL eine große Rolle beitragen.\cite{Anderson2002}
 
-Die Beobachtungen der Bodenstationen wurden mit Zeitangaben nach der Universal Time 1 (UT1)\footnote{Durch astronomische
-Beobachtung gewonnene und um Einflüsse der Polschwankungen (mit Perioden über 7 Tage) korrigierte, mittlere Ortszeit des
-durch die Sternwarte von Greenwich führenden Nullmeridians} parametrisiert gespeichert. Für die Analysen und
+Die Beobachtungen der Bodenstationen wurden mit Zeitangaben nach der Universal Time 1 (UT1)
+\footnote{Durch astronomische Beobachtung gewonnene und um Einflüsse der Polschwankungen (mit Perioden über 7 Tage) korrigierte, mittlere Ortszeit des durch die Sternwarte von Greenwich führenden Nullmeridians}
+parametrisiert gespeichert. Für die Analysen und
 Berechnungen musste diese Zeitangaben einerseits in die Internationale Atomzeit TAI, andererseits auch in die
 Ephemeridenzeit umgerechnet werden. Auch hierfür verwendete man äußerst genaue Angaben zu Position, Geschwindigkeit und
 Gravitationspotential der Antennen.\cite{Dittus2006}
@@ -114,11 +115,12 @@ Die Aufzeichnung der Messungen wurde leider nicht so sorgfältig und gründlich 
 Dabei verwendeten die unterschiedlichen Analysten unterschiedliche Modelle und Datenbearbeitungsstrategien.\cite{Nieto2005}
 Darüber hinaus würden die Navigations-Daten nicht sorgfältig archiviert.\cite{Nieto2005}
 
-% Magnetbänder -> ODF?
-
-Gespeichert wurden die Daten im Format \"Orbit Determination File\" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE), dabei wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
+Gespeichert wurden die Daten ursprünglich im \"Archival Tracking Data File\"-Format (ATDF) auf Magnetbändern. das Team um Anderson las diese aus und konvertierte sie mit Standartsoftware in das Format \"Orbit Determination File\" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE), dabei wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
 – "Compression time" genannt – sowie die dauer dieser Zeitspanne, der Zeitpunkt in der Mitte des Intervals\footnote{Was dem Zeitpunkt entspricht, als die Raumsonde das Signal empfing\cite{Levy2008}}, die Sendefrequenz und
-Angaben dazu welche DSN Antennen das Signal geschickt und welche es empfangen haben.\cite{Levy2008} 	% ursprünglich magnetbänder?
+Angaben dazu welche DSN Antennen das Signal geschickt und welche es empfangen haben.\cite{Levy2008}
+Auch die Laufzeitmessungen sind in den ODF-Dateien enthalten.\cite{Anderson2002}
+Mit diesen Dateien arbeiten alle im folgenden beschriebenen Programme.
+Die Copression time beträgt 10 s, 60 s, 600 s oder 1980 s.\cite{Anderson2002} % Stimmt das?
 
 % (wo) kommt das rein:
 %% Da die im ODF format gespeicherten Messdaten nur die Zeit t2 (Signal an der Sonde) nicht jedoch die Zeitpunkte t1
