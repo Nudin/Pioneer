@@ -1,21 +1,21 @@
 
 \subsection{Navigation und Geschwindigkeitsmessung}
-Die Navigation der Pioneersonden erfolgte mithilfe der Antennen des Deep Space Network (DSN) in Goldstone/USA,
-Madrid/Spanien und Canberra/Australien.
-Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über
-die Zwei-Wege-Dopplerverschiebung von Radiowellen:
+Die Navigation der Pioneersonden erfolgte mithilfe der Antennen des Deep Space Network (DSN) in Goldstone/USA, Madrid/Spanien und Canberra/Australien. Dies sind Komplexe von zahlreichen Antennen – für die Navigation der Pioneer-Sonden wurden davon die Deep Space Station (DSS) Antennen 12, 14, 42, 43, 62 und 63 verwendet.\cite{Anderson2002}
+Man sollte erwähnen, dass diese Antennenkomplexe im laufe der Zeit zahlreich umgebaut wurden um den Anforderungen neuer Missionen gerecht zu werden. Dabei haben sich unter anderem auch die internen Frequenzen geändert\cite{Anderson2002}. Dies muss bei der genauen Betrachtung der Daten berücksichtigt werden.
+Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen:
 
 Wir nehmen im folgenden an, dass die Sonde sich näherungsweise radial von uns wegbewegt.
-Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink). Die Frequenz wird mithilfe eines Wasserstoff-Masers erzeugt.
-Damit wird eine äußerst präzise und stabile Frequenz von 5 MHz und 10 MHz erzeugt. Im Digital Controlled Oscillator (DCO), werden diese Frequenz verwendet um mit frequenzmultipliern ein Signal mit ~22 MHz zu erzeugten, welches dann mit dem Faktor 96 multipliziert wird um das zu sendende Signal von 22 GHz zu erhalten.\cite{Anderson2002}
+Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, ~2,11 GHz) zum Satelliten gesendet (uplink).
+Die Frequenz wird mithilfe eines Wasserstoff-Masers erzeugt.
+Damit wird eine äußerst präzise und stabile Referenz-Frequenz von 5 MHz und 10 MHz erzeugt. Im Digital Controlled Oscillator (DCO), werden diese Frequenz verwendet um mit frequenzmultipliern ein Signal mit ~22 MHz zu erzeugten, welches dann mit dem Faktor 96 multipliziert wird um das zu sendende Signal von etwa 2,2 GHz zu erhalten.\cite{Anderson2002}
 Der Satellit empfängt das Signal dopplerverschoben:
 \begin{equation}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
 \end{equation}
 und antwortet unmittelbar mittels einer 8-Watt Sendeanlage und eines Transponders
-mit einer um den festen Faktor $ \frac{240}{221} $ verschobenen Frequenz:
+mit einer um den festen Faktor $ \frac{240}{221} $ multiplizierten Frequenz:
 \begin{equation}
-\nu'_R = \nu_R\frac{240}{211}
+\nu'_R = \nu_R\frac{240}{221}
 \end{equation}
 Dies ist notwendig, da es sich bei den Radiosignalen um kohärente Wellen handelt und man so Verfälschungen durch Interferenz der Hin- und Rücklaufenden Wellen vermeidet.\cite{Anderson2002}
 Beim Rückweg wird das Signal ein zweites mal identisch dopplerverschoben.
@@ -34,6 +34,7 @@ einfacheren Form von
  \frac{\nu'_E-\nu_E}{\nu_E} \approx -2\frac{v/c}{1+v/c} \approx -2 \frac{v}{c}
 \end{equation}
 führt.
+Sind Sender- und Empfängerantenne die selben, so spricht man von einer zwei-Wege-Messung, wenn Sende und Empfängerantennen unterschiedlich sind spricht man von einer drei-Wege-Messung.\cite{Levy2009} %schon oben, als footnote?
 Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit $\Delta t$ des Signales bestimmen:
 \begin{equation}
  2d = c \Delta t
@@ -48,6 +49,7 @@ Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entste
 %Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
 
 Die Frequenzmessung erfolgte durch Zählen der Perioden und Vergleich mit einer Atomuhr.\cite{Nieto2007} %``Schwingungen'' als Formulierung überprüfen -  Perioden
+Die Frequenz ist die eine durchschnittliche Frequenz, definiert über die Perioden über einen gewissen Zeitraum.
 
 Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für das Thema relevantere – 
 Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
@@ -55,7 +57,7 @@ Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit bes
 Für die genauere Bestimmung der Bahn muss man einige weitere Einflüsse berücksichtigen, welche wir im folgenden erläutern wollen.
 
 Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden: Beim "reflektieren" des Signals an der Antenne des drehenden Raumschiffes kommt es zu einer von der Rotationsgeschwindigkeit abhängigen Dopplerverschiebung. Jede Umdrehung der Sonde führt zu einer zusätzlichen Schwingung im Up- und im Down-link. Mit dem Frequenz-Verhältnis von up- und Down-link ergibt sich insgesamt $(1+240/221)$ Schwingungen pro Umdrehung der Sonde.\cite{Anderson2002} %Ist "Schwingungen" das richtige Wort dafür
-Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 verfügbar, als das DSN aufhörte Spinkalibrationen durchzuführen. Für spätere Daten muss der Spin des Raumschiffes durch Interpolation der Datenpunkte und den Daten des Imaging Photo Polarimeter (IPP) berechnet werden. Nach dem Manöver am 6 July 1993 reiche die Energie jedoch nicht mehr für den Betrieb dieses aus. Analysten konnten jedoch noch etwa alle 6 Monate eine grobe Abschätzung des Spins aus Informationen des conscan Manövers erhalten. % Conscan erklären
+Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 verfügbar, als das DSN aufhörte Spinkalibrationen durchzuführen. Für spätere Daten muss der Spin des Raumschiffes durch Interpolation der Datenpunkte und den Daten des Imaging Photo Polarimeter (IPP) berechnet werden. Nach dem Manöver am 6 July 1993 reiche die Energie jedoch nicht mehr für den Betrieb dieses aus. Analysten konnten jedoch noch etwa alle 6 Monate eine grobe Abschätzung des Spins aus Informationen der Conscan-Manöver erhalten. % Conscan erklären
 %aus Anderson2002:
 %Conscan stands for conical scan. The receiving antenna
 %is moved in circles of angular size corresponding to one
@@ -67,7 +69,7 @@ Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 ve
 %maneuvers can be open-loop, for orientation towards or
 %away from Earth-pointing, or closed-loop, for homing on
 %the uplink radio-frequency transmission from the Earth.
-Für die Daten nach 1995 wurden der Soinn nicht mehr berechnet, auch wenn dies weiterhin mit den Aufgezeichneten conscan Daten möglich wäre. Außerdem, ist die Spinachse nicht genau identich mit der Phasenachse, weshalb es eine sehr kleine – aber messbare – Sinusfunktion in den Dopplerdaten gibt. Daraus ließe sich ebenfalls die Spinrate für die Daten von nach 1993 berechnen – dies wurde bisher jedoch noch nicht gemacht.\footnote{Zumindest soweit uns bekannt.}
+Für die Daten nach 1995 wurden der Spin nicht mehr berechnet, auch wenn dies weiterhin mit den Aufgezeichneten conscan Daten möglich wäre. Außerdem, ist die Spinachse nicht genau identich mit der Phasenachse, weshalb es eine sehr kleine – aber messbare – Sinusfunktion in den Dopplerdaten gibt. Daraus ließe sich ebenfalls die Spinrate für die Daten von nach 1993 berechnen – dies wurde bisher jedoch noch nicht gemacht.\footnote{Zumindest soweit uns bekannt.}
 Die genaue Spinkalibration von Pioneer 11 ist aufgrund des Versagens eines Spin-down-Schubtriebwerks nicht möglich.\cite{Anderson2002}
 
 Zu beachten ist, dass die Propagation des Signales vom Medium beeinflusst wird. Der Einfluss von interplanetarer Materie konnte durch Vergleich
@@ -108,7 +110,13 @@ Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbe
 
 % Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte.
 
-Gespeichert wurden die Daten im Format ODF, dabei wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
+Die Aufzeichnung der Messungen wurde leider nicht so sorgfältig und gründlich durchgeführt, wie man heute für die Analysen gerne hätte, da man die Anomalie ursprünglich für eine \"Kuriosität\" hielt.\cite{Nieto2005} Die Rohdaten wurden von unterschiedlichen Analysten ausgelesen und mit dem Programm STRIPPER/VAX behandelt um die damals relevanten Navigationsdaten zu extrahieren.\cite{Nieto2005} % 
+Dabei verwendeten die unterschiedlichen Analysten unterschiedliche Modelle und Datenbearbeitungsstrategien.\cite{Nieto2005}
+Darüber hinaus würden die Navigations-Daten nicht sorgfältig archiviert.\cite{Nieto2005}
+
+% Magnetbänder -> ODF?
+
+Gespeichert wurden die Daten im Format \"Orbit Determination File\" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE), dabei wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
 – "Compression time" genannt – sowie die dauer dieser Zeitspanne, der Zeitpunkt in der Mitte des Intervals\footnote{Was dem Zeitpunkt entspricht, als die Raumsonde das Signal empfing\cite{Levy2008}}, die Sendefrequenz und
 Angaben dazu welche DSN Antennen das Signal geschickt und welche es empfangen haben.\cite{Levy2008} 	% ursprünglich magnetbänder?
 
