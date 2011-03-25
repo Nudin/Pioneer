@@ -70,7 +70,7 @@ Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 ve
 %maneuvers can be open-loop, for orientation towards or
 %away from Earth-pointing, or closed-loop, for homing on
 %the uplink radio-frequency transmission from the Earth.
-Für die Daten nach 1995 wurden der Spin nicht mehr berechnet, auch wenn dies weiterhin mit den Aufgezeichneten conscan Daten möglich wäre. Außerdem, ist die Spinachse nicht genau identich mit der Phasenachse, weshalb es eine sehr kleine – aber messbare – Sinusfunktion in den Dopplerdaten gibt. Daraus ließe sich ebenfalls die Spinrate für die Daten von nach 1993 berechnen – dies wurde bisher jedoch noch nicht gemacht.\footnote{Zumindest soweit uns bekannt.}
+Für die Daten nach 1995 wurden der Spin nicht mehr berechnet, auch wenn dies weiterhin mit den Aufgezeichneten conscan Daten möglich wäre. Außerdem, ist die Spinachse nicht genau identisch mit der Phasenachse, weshalb es eine sehr kleine – aber messbare – Sinusfunktion in den Dopplerdaten gibt. Daraus ließe sich ebenfalls die Spinrate für die Daten von nach 1993 berechnen – dies wurde bisher jedoch noch nicht gemacht.\footnote{Zumindest soweit uns bekannt.}
 Die genaue Spinkalibration von Pioneer 11 ist aufgrund des Versagens eines Spin-down-Schubtriebwerks nicht möglich.\cite{Anderson2002}
 
 Zu beachten ist, dass die Propagation des Signales vom Medium beeinflusst wird. Der Einfluss von interplanetarer Materie konnte durch Vergleich
@@ -111,11 +111,11 @@ Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbe
 
 % Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte.
 
-Die Aufzeichnung der Messungen wurde leider nicht so sorgfältig und gründlich durchgeführt, wie man heute für die Analysen gerne hätte, da man die Anomalie ursprünglich für eine \"Kuriosität\" hielt.\cite{Nieto2005} Die Rohdaten wurden von unterschiedlichen Analysten ausgelesen und mit dem Programm STRIPPER/VAX behandelt um die damals relevanten Navigationsdaten zu extrahieren.\cite{Nieto2005} % 
+Die Aufzeichnung der Messungen wurde leider nicht so sorgfältig und gründlich durchgeführt, wie man heute für die Analysen gerne hätte, da man die Anomalie ursprünglich für eine "Kuriosität" hielt.\cite{Nieto2005} Die Rohdaten wurden von unterschiedlichen Analysten ausgelesen und mit dem Programm STRIPPER/VAX behandelt um die damals relevanten Navigationsdaten zu extrahieren.\cite{Nieto2005} % 
 Dabei verwendeten die unterschiedlichen Analysten unterschiedliche Modelle und Datenbearbeitungsstrategien.\cite{Nieto2005}
 Darüber hinaus würden die Navigations-Daten nicht sorgfältig archiviert.\cite{Nieto2005}
 
-Gespeichert wurden die Daten ursprünglich im \"Archival Tracking Data File\"-Format (ATDF) auf Magnetbändern. das Team um Anderson las diese aus und konvertierte sie mit Standartsoftware in das Format \"Orbit Determination File\" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE), dabei wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
+Gespeichert wurden die Daten ursprünglich im "Archival Tracking Data File"-Format (ATDF) auf Magnetbändern. das Team um Anderson las diese aus und konvertierte sie mit Standartsoftware in das Format "Orbit Determination File" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE), dabei wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
 – "Compression time" genannt – sowie die dauer dieser Zeitspanne, der Zeitpunkt in der Mitte des Intervals\footnote{Was dem Zeitpunkt entspricht, als die Raumsonde das Signal empfing\cite{Levy2008}}, die Sendefrequenz und
 Angaben dazu welche DSN Antennen das Signal geschickt und welche es empfangen haben.\cite{Levy2008}
 Auch die Laufzeitmessungen sind in den ODF-Dateien enthalten.\cite{Anderson2002}
@@ -123,8 +123,9 @@ Mit diesen Dateien arbeiten alle im folgenden beschriebenen Programme.
 Die Copression time beträgt 10 s, 60 s, 600 s oder 1980 s.\cite{Anderson2002} % Stimmt das?
 
 % (wo) kommt das rein:
-%% Da die im ODF format gespeicherten Messdaten nur die Zeit t2 (Signal an der Sonde) nicht jedoch die Zeitpunkte t1
-%% (Sendezeitpunkt auf der Erde) und t3 (Empfangszeitpunkt auf der Erde) enthalten, müssen dise für die spätere Verwendung
-%% in Analysen durch Schritweiße Berechnung der "relativistic light time equations"" aus t2 errechnen.\cite{Levey2009} %FIXME: begriff übersetzen
+% Da die im ODF format gespeicherten Messdaten nur die Zeit t2 (Signal an der Sonde) nicht jedoch
+% die Zeitpunkte t1 (Sendezeitpunkt auf der Erde) und t3 (Empfangszeitpunkt auf der Erde) enthalten,
+% müssen dise für die spätere Verwendung in Analysen durch Schritweiße Berechnung der
+% "relativistic light time equations"" aus t2 errechnen.\cite{Levey2009} %FIXME: begriff übersetzen
 
 
