@@ -1,7 +1,13 @@
 \subsection{Neue Analyse aller Vorhandener Daten}
-Die Pioneer Sonden waren über drei Jahrzehnte im Weltall. Die Analyse von Anderson et al., 2002 betrachtete nur die Daten aus etwa 11,5 Jahren von Pioneer 10 und 3,5 Jahren von Pioneer 11. (Genaue Daten in der Tabelle \ref{tab:andersondaten})
-%Die Analyse von Anderson et al., 2002 betrachtete nur die Pioneer 10-Daten in der Zeit vom 3. Januar 1987 bis zum 22. July 1998 (40 AU bis 70,5 AU) und die Pioneer 11-Daten vom 5. Januar 1987 bis zum 1. Oktober 1990 (22,4 AU bis 31,7 AU).
-Jedoch empfing man bis zum 27. April 2002 brauchbare Daten von Pioneer 10. (Die Daten von Pioneer 11 waren ab Oktober 1990 nicht mehr brauchbar) Auch die anderen erwähnten Analysen bezogen sich immer auf etwa den selben Zeitraum, teils sogar weniger.
+Die Pioneer Sonden waren über drei Jahrzehnte im Weltall. Die bisherigen Analysen betrachteten nur Daten aus etwa 11,5 Jahren von Pioneer 10 und 3,5 Jahren von Pioneer 11. Jedoch empfing man bis zum 27. April 2002 brauchbare Daten von Pioneer 10. und immerhin bis zum Oktober 1990 brauchbare Daten von Pioneer 11.
+
+Die erste Analyse im Jahr 1998 berücksichtigte nur die Daten von 1987 bis 1995 von Pioneer 10 und einen kürzeren Zeitfenster von Pioneer 11. Die ausführlichere Analyse 2002 betrachtete ein vergrößertes Zeitfenster. Die Daten der Sonde Pioneer 10 umfassten 19.403 Datenpunkte in der Zeit vom 3. Januar 1987 bis zum 22. July 1998 auf Entfernungen von 40 AU bis 70,5 AU. Von Pioneer 11 betrachtete man 10.252 Messpunkte vom 5. Januar 1987 bis zum 1. Oktober 1990 (22,4 AU bis 31,7 AU).
+
+Auch die anderen erwähnten Analysen bezogen sich immer auf etwa den selben Zeitraum, teils sogar weniger. (siehe Tabelle \ref{tab:daten})
+
+Die Daten von Pioneer 10 aus dem Zeitraum von 1998 bis 2002 wurden also noch nicht untersucht.
+Noch Erfolgversprechender wäre jedoch eine Analyse der frühen Daten. Die Anomalie wurde bereits ab 1979 beobachtet und durch bessere Berechnung des solaren Strahlungsdruck könnten auch die noch früheren Daten wichtige Informationen liefern.
+Ein kompletter Datensatz ab dem Start der Sonden, bis zu den letzten brauchbaren Signalen würde etwa 80.000 Datenpunkte von 30 Jahren Kommunikation mit Pioneer 10  über Distanzen von ungefähr 1 AU bis 80 AU sowie 50.000 Datenpunkte aus 17.5 Jahren (1 bis 31,7 AU) von Pioneer 11 umfassen.\cite{Turyshev2004} Es gibt also etwas 17,5 Jahre Pioneer 10 und 12,5 Jahre Pioneer 11 Daten die bisher nicht ausgewertet wurden. Weniger als ein Viertel der Daten wurden bisher genutzt. Auch wenn lange nicht alle Datenpunkte gleich brauchbar sind, würde eine erneute Analyse viele weitere Erkenntnisse bringen.
 
 \begin{table}[h]
 \centering
@@ -28,22 +34,27 @@ Jedoch empfing man bis zum 27. April 2002 brauchbare Daten von Pioneer 10. (Die 
 \hline 
 \end{tabular}
 \caption{Übersicht über die Verwendeten Daten in allen Analysen}
-\label{tab:andersondaten}
+\label{tab:daten}
 \end{sidewaystable}
 
 
-Die Daten von Pioneer 10 aus dem Zeitraum von 1998 bis 2002 wurden also noch nicht untersucht. Noch
-Erfolgversprechender wäre jedoch eine Analyse der frühen Daten. Die Anomalie wurde bereits ab 1979 beobachtet und durch
-bessere Berechnung des solaren Strahlungsdruck könnten auch die noch früheren Daten wichtige Informationen liefern.
-
-Es ist daher bereits seit längerem geplant die kompletten Daten, vom Start der Sonden, bis zu den letzten verwertbaren Signalen neu zu analysieren. Dies stellte sich jedoch als schwerer heraus als gedacht. Als Grund dafür werden veraltete Dateiformate, fehlende Daten und beschädigte Dateien genannt.\cite{Turyshev2010}
+Es ist daher bereits seit längerem geplant die kompletten Daten, vom Start der Sonden, bis zu den letzten verwertbaren Signalen neu zu analysieren. Dies stellte sich jedoch als schwerer heraus als gedacht. In den über 30 Jahren haben sich die Dateiformate, die Navigationssoft und -hardware, das DSN und die beteiligten Personen mehrfach geändert. Mann hat unter anderem die folgenden Probleme überwinden müssen:\cite{Turyshev2010}
+\begin{itemize}
+\item Die Daten waren auf verschiedene Archive verteilt, einige existierten sogar nur noch bei (ehemaligen) Mitarbeitern Zuhause.
+\item Die Dateien waren in unterschiedlichen Formaten (abweichen von den oben beschriebenen), einige davon waren veraltet, schlecht dokumentiert und nicht problemlos in heutige Formate umzuwandeln.
+\item Dateien waren oft unvollständig, es fehlen teils kritische Informationen.
+\item Die Dateien wurden unterschiedlich behandelt, so wurden bei Dateien manchen die Dopplerdaten um die Effekte des Raumsonden Spins korrigiert, bei andern nicht. (siehe Kapitel \ref{messung})
+\item Einige Dateien waren beschädigt. In einigen Fällen konnten die Dateien repariert werden, in andern waren die Dateien irreparabel beschädigt und die Daten waren verloren.
+\end{itemize}
+Trotzdem hat man es bis zum November 2009 geschafft, die Daten so weit wie möglich vollständig zusammen zutragen und herzurichten.
+Die ursprünglichen Datenquellen sind: % Übersetzung? ("initially", turysehv2010 - S.56)
+\begin{itemize}
+\item Die archivierten Dateien am JPL und dem Deep Spache Network
+\item Die archivierten Dateien am National Space Science Data Center (NSSDC)
+\item Daten welche von einzelnen Mitarbeitern des JPL archiviert wurden.
+\end{itemize}
 
 % Es ist geplant am ZARM in Zusammenarbeit mit dem JPL die gesammten Pioneer Daten vom Start bis zum letzten Signal neu
 % zu analysieren	% aus Physikjournal
 % die alten Daten wurden von Magnetbändern heruntergeladen und für neue Datenanalysen vorbereitet % aus Physikjournal
-
-
-\bigskip
-…
-\bigskip
 
