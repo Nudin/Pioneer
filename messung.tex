@@ -39,12 +39,12 @@ Darüber hinaus lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit
 \begin{equation}
  2d = c \Delta t
 \end{equation}
-Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder der Sonde demoduliert und filtert es um es beim Down-link wieder hinein zu modulieren.)
+Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder der Sonde demoduliert und filtert es um es beim Down-link wieder hinein zu modulieren.) Dieses Verfahren nennt man "ramping". % wirklich mit -ing?
 Dabei muss man beachtet, das durch das ständige senden solcher Modulierten Signale und die langen Laufzeiten es zu Verwelchslungsgefahr zwischen unterschiedlichen Signalen kommen kann. Dies muss von den Analyseprogrammen erkannt werden.
 
 Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
 Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht. Nicht zuletzt kann man damit durch Frequenzfehler kommende falsche Dopplerdaten erkennen.\cite{Anderson2002}
-Allerdings wurde dies laut \cite{Anderson2002} nur bei der Analyse der Daten von Galileo und Ulysses (siehe unten), nicht bei den Pioneersonden verwendet.
+Allerdings wurde dies laut \cite{Anderson2002} nur bei der Analyse der Daten von Galileo und Ulysses (siehe unten), nicht bei den Pioneersonden verwendet. Von den Pioneersonden liegen Laufzeitmessdaten ("ramped-range") nur von der ersten Zeit der Mission vor. Im späteren Verlauf der Mission wurde diese Technik unbrauchbar, da die Bandbreite der Trägerfrequenz zu klein wurde um die modulierten Veränderungen zu detektieren.\cite{Turyshev2010} % "carrier tracking loop bandwidth"->"Bandbreite der Trägerfrequenz" richtig übersetzt? Erklären warum.
 
 Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen.Auch dies fließt in die Analysen mit ein.\cite{Anderson2002} % Wirklich die Phase?
 %Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
