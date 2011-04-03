@@ -5,11 +5,13 @@ Die erste Analyse im Jahr 1998 berücksichtigte nur die Daten von 1987 bis 1995 
 
 Auch die anderen erwähnten Analysen bezogen sich immer auf etwa den selben Zeitraum, teils sogar weniger. (siehe Tabelle \ref{tab:daten})
 
+Dies lag einerseits daran, das diese neueren Daten bereits in passenden Dateiformaten vorlagen (siehe Kapitel \ref{messung}), und daran, dass in großer Entfernung der Einfluss einiger Effekte wie der Strahlungsdruck und Plasmaeffekte geringer ist, man diese also weniger genau berechnen musste.\cite{Nieto2005} Die späteren Daten wurden von Andersons Team schlicht und einfach nicht berücksichtigt, da sie zu Beginn der ersten Untersuchungen noch nicht vorlagen. %Quelle
+
 Die Daten von Pioneer 10 aus dem Zeitraum von 1998 bis 2002 wurden also noch nicht untersucht.
 Noch Erfolgversprechender wäre jedoch eine Analyse der frühen Daten. Die Anomalie wurde bereits ab 1979 beobachtet und durch bessere Berechnung des solaren Strahlungsdruck könnten auch die noch früheren Daten wichtige Informationen liefern.
 Ein kompletter Datensatz ab dem Start der Sonden, bis zu den letzten brauchbaren Signalen würde etwa 80.000 Datenpunkte von 30 Jahren Kommunikation mit Pioneer 10  über Distanzen von ungefähr 1 AU bis 80 AU sowie 50.000 Datenpunkte aus 17.5 Jahren (1 bis 31,7 AU) von Pioneer 11 umfassen.\cite{Turyshev2004} Es gibt also etwas 17,5 Jahre Pioneer 10 und 12,5 Jahre Pioneer 11 Daten die bisher nicht ausgewertet wurden. Weniger als ein Viertel der Daten wurden bisher genutzt. Auch wenn lange nicht alle Datenpunkte gleich brauchbar sind, würde eine erneute Analyse viele weitere Erkenntnisse bringen.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline & Pioneer 10 & Pioneer 11 \\ 
@@ -20,22 +22,6 @@ Ein kompletter Datensatz ab dem Start der Sonden, bis zu den letzten brauchbaren
 \caption{Die von Anderson et al. verwendeten Daten}
 \label{tab:andersondaten}
 \end{table}
-
- 
-\begin{sidewaystable}[hn]
-\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline  & \mc{3}{c|}{Pioneer 10} & \mc{3}{c|}{Pioneer 11} \\
-\hline  & Zeitraum & Entfernung & Datenpunkte & Zeitraum & Entfernung & Datenpunkte \\
-\hline Anderson et al, 1998 & 1987-1995 &  &  &  &  &  \\
-\hline Anderson et al, 2002 & 3.01.1987 - 22.07.1998 & 40 - 70,5 AU & 19.403 & 5.01.1987 - 1.10.1990 & 40 - 70,5 AU & 10.252 \\
-\hline … &   &   &   &   &   &   \\
-\hline Verfügbar & -27.4.2002 &  &  & -10.1990 &  &  \\
-\hline 
-\end{tabular}
-\caption{Übersicht über die Verwendeten Daten in allen Analysen}
-\label{tab:daten}
-\end{sidewaystable}
 
 
 Es ist daher bereits seit längerem geplant die kompletten Daten, vom Start der Sonden, bis zu den letzten verwertbaren Signalen neu zu analysieren. Dies stellte sich jedoch als schwerer heraus als gedacht. In den über 30 Jahren haben sich die Dateiformate, die Navigationssoft und -hardware, das DSN und die beteiligten Personen mehrfach geändert. Mann hat unter anderem die folgenden Probleme überwinden müssen:\cite{Turyshev2010}
@@ -53,8 +39,51 @@ Die ursprünglichen Datenquellen sind: % Übersetzung? ("initially", turysehv201
 \item Die archivierten Dateien am National Space Science Data Center (NSSDC)
 \item Daten welche von einzelnen Mitarbeitern des JPL archiviert wurden.
 \end{itemize}
+Die Pioneer 10-Daten von vor 1980 haben sich dabei als unbrauchbar herausgestellt, die Daten danach sind jedoch durchgehend brauchbar. Die Pioneer 11-Daten sind von Mitte 1978 bis zum Ende brauchbar. Die ausführliche Analyse dieses umfangreichen Datensatzes ist derzeit in Arbeit.\cite{Turyshev2010} Mit den Ergebnissen dieser Analyse kann in Kürze gerechnet werden. % wirklich?
+
+\begin{figure}[htnb]
+\begin{center}
+\noindent    
+\psfig{figure=images/cOMBINED,width=\linewidth,height=\textheight,keepaspectratio}
+\end{center}
+\vskip -10pt
+  \caption{
+Die obere Kurze zeigt den verlauf des Strahlungsdrucks an, die untere die der Anomalie. In der Mitte die Kombination von beiden. Die Grafik erschien erstmals in \cite{Anderson1992}}
+\label{fig:forces}
+\end{figure} 
+
+\begin{figure}[htnb]
+\begin{center}
+\noindent    
+\psfig{figure=images/correlate,width=\linewidth,height=\textheight,keepaspectratio}
+\end{center}
+\vskip -10pt
+  \caption{
+}
+\label{fig:anomalie}
+\end{figure} 
+
+
+Durch die deutliche Vergrößerung der Anzahl an verfügbaren Daten ist damit zu rechnen, dass man die Anomalie genauer und zuverlässiger bestimmen kann. Wichtiger ist jedoch das man bei einer Analyse über einen so langen Zeitraum den Ursprung der Anomalie in der Thermischen Abstrahlung wesentlich sicherer ausschließen können müsste, da der Radioisotopengenerator über diesen Zeitraum hinweg einen Starken Leistungsschwund hat und man somit eine zeitliche Veränderung in der Größe der Anomalie sehen müsste. Von besonderen Interesse könnten die frühen Daten sein:
+Die bisherigen Analysen deuten darauf hin, dass die Anomalie erst ab einer Entfernung von etwa 15 AU auftritt. Es ist erfolgversprechend den Zeitpunkt bei welchem die Anomalie anfängt aufzutreten zu analysieren.
 
 % Es ist geplant am ZARM in Zusammenarbeit mit dem JPL die gesammten Pioneer Daten vom Start bis zum letzten Signal neu
 % zu analysieren	% aus Physikjournal
 % die alten Daten wurden von Magnetbändern heruntergeladen und für neue Datenanalysen vorbereitet % aus Physikjournal
 
+\FloatBarrier
+
+\begin{sidewaystable}[hnt]
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline  & \mc{3}{c|}{Pioneer 10} & \mc{3}{c|}{Pioneer 11} \\
+\hline  & Zeitraum & Entfernung & Datenpunkte & Zeitraum & Entfernung & Datenpunkte \\
+\hline Anderson et al, 1998 & 1987-1995 &  &  &  &  &  \\
+\hline Anderson et al, 2002 & 3.01.1987 - 22.07.1998 & 40 - 70,5 AU & 19.403 & 5.01.1987 - 1.10.1990 & 40 - 70,5 AU & 10.252 \\
+\hline … &   &   &   &   &   &   \\
+\hline Verfügbar & -27.4.2002 &  &  & -10.1990 &  &  \\
+\hline 
+\end{tabular}
+\caption{Übersicht über die Verwendeten Daten in allen Analysen}
+\label{tab:daten}
+\end{sidewaystable}

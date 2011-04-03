@@ -3,14 +3,38 @@
 \usepackage[ngerman]{babel}
 \usepackage{cite}
 \usepackage{amsmath}
-
 \usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{hyperref}
+\hypersetup{
+%    bookmarks=true,
+    pdftoolbar=true,
+    pdfmenubar=true,
+    pdffitwindow=false,
+    pdfstartview={FitH},
+    pdftitle={Die Pioneer-Anomalie},
+    pdfauthor={Judith Selig, Michael F. Sch\"onitzer, Florian Schlagintweit},
+    pdfsubject={Pioneer-Anomalie},
+    pdfkeywords={Pioneer} {Anomalie} {Physik} {Raumfahrt},
+    pdfnewwindow=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=blue
+}
+
+\usepackage[percent]{overpic}
+\usepackage{color}
+\usepackage{subfig}
+\usepackage{placeins}
+
 
 \newcommand{\rem}[1]{}
 
-
 %opening
-\title{Die Pioneer-Anormalie}
+\title{Die Pioneer-Anomalie}
 %\author{Judith Selig\footnote{judith.selig@gmx.de}, Michael F. Schönitzer\footnote{michael@schoenitzer.de}, Florian Schlagintweit\footnote{florian@schlagintweit.de}}	% welche Reihenfolge der Namen?
 %\author{Judith Selig\thanks{judith.selig@gmx.de}, Michael F. Schönitzer\thanks{michael@schoenitzer.de}, Florian Schlagintweit\footnote{florian@schlagintweit.de}}	% welche Reihenfolge der Namen?
 
@@ -25,6 +49,7 @@
 
 % \end{abstract}
 
+\shorthandoff{"}
 
 \input{einleitung}
 
@@ -54,6 +79,7 @@
 % ToFix:
 %% - Quellen-format fixen
 %% - Footnote der Authoren
+%% - evtl. Anführungszeichen richten
 
 \bibliography{lit}{}
 \bibliographystyle{unsrtdin}
