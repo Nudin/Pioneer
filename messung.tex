@@ -2,8 +2,9 @@
 \subsection{Navigation und Geschwindigkeitsmessung}\label{messung}
 Die Navigation der Pioneersonden erfolgte mithilfe der Antennen des Deep Space Network (DSN) einem Zusammenschluss mehrerer Radioteleskopanlagen des Jet Propulsion Laboratory (JPL)\footnote{Das Jet Propulsion Laboratory in Kalifornien entwickelt und steuert Sonden für die NASA und beschäftigt viele der Experten auf dem Gebiet der Pioneeranomalie, darunter auch John D. Anderson und Slava G. Turyshev}. Das DSN besteht heute aus großen Radioteleskopanlagen in Goldstone/USA, Madrid/Spanien und Canberra/Australien. Früher gab es darüber hinaus noch Anlagen in Woomera/Australien und Johannesburg/Süd Afrika.\cite{Anderson2002}\cite{Turyshev2010} Dies sind jeweils Komplexe von zahlreichen Antennen – für die Navigation der Pioneer-Sonden wurden laut der Arbeit von Anderson et al., 2002\cite{Anderson2002} davon die Deep Space Station (DSS) Antennen 12, 14, 42, 43, 62 und 63 verwendet. Turyshev und Toth erläutern jedoch in ihrer 2010 erschienenen Arbeit, dass noch etliche weitere Antennen auf alle Parks des DSN, sowie auch einige Antennen anderer Einrichtungen verwendet wurden.\cite{Turyshev2010} Die Antennen hatten Anfangs meist Durchmesser von 26 Metern, später häufig 34 oder 64 Meter teilweise bis zu 70 Meter.\cite{Turyshev2010}
 Man sollte erwähnen, dass diese Antennenkomplexe im laufe der Zeit zahlreich umgebaut wurden um den Anforderungen neuer Missionen gerecht zu werden. Dabei haben sich unter anderem auch die internen Frequenzen geändert\cite{Anderson2002}. Dies muss bei der genauen Betrachtung der Daten berücksichtigt werden, ist darüber hinaus jedoch auch eine Voraussetzung für die 30 Jahre lange Missionsdauer gewesen, da ansonsten die Reichweite der Antennen nur bei etwa 22 AU gelegen hätte.\cite{Turyshev2010}
-Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen:
+Die Geschwindigkeitsmessung der Pioneersonden, welche für die Pioneeranomalie von zentraler Bedeutung ist, erfolgte über die Zwei-Wege-Dopplerverschiebung von Radiowellen.
 
+\subsubsection{Entfernungs- und Geschwindigkeitsbestimmung }
 Wir nehmen im folgenden an, dass die Sonde sich näherungsweise radial von uns wegbewegt.
 Von den Bodenstationen wurden Radiowellen bekannter Frequenz (S-Band, $\sim$2,11 GHz) zum Satelliten gesendet (uplink).
 Die Frequenz wird mithilfe eines Wasserstoff-Masers erzeugt.
@@ -121,6 +122,8 @@ Mann hat sogar einen möglichen Einfluss von mechanischer Deformation der Antenn
 Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbezogen.\cite{Dittus2006} % mehr, Quelle (note: <10^-5 a_p)
 
 % Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte.
+
+\subsubsection{Archivierung der Messdaten}
 
 Gespeichert wurden die Daten ursprünglich im "Intermediate Data Record (IDR)"-Format, nach einer Konversion dann im "Archival Tracking Data File"-Format (ATDF) auf Magnetbändern. Diese enthalten alle vom DSN gemessenen Daten, inklusive Signalstärke, Antennenausrichtung, Frequenz, Entfernung und Störungen.\cite{Turyshev2010} % range und residuals besser übersetzen.
 Viele der ATDF Dateien als Magnetbänder an das NSSDC-Archiv zur Archivierung gesandt, jedoch nicht alle – dazu mehr in Kapitel \ref{daten}.\cite{Markwardt2002}
