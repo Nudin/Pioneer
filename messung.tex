@@ -11,6 +11,7 @@ Die Frequenz wird mithilfe eines Wasserstoff-Masers erzeugt.
 Damit wird eine äußerst präzise und stabile Referenz-Frequenz von 5 MHz und 10 MHz erzeugt. Im Digital Controlled Oscillator (DCO), werden diese Frequenz verwendet um mit frequenzmultipliern ein Signal mit ungefähr 22 MHz zu erzeugten, welches dann mit dem Faktor 96 multipliziert wird um das zu sendende Signal von etwa 2,11 GHz zu erhalten.\cite{Anderson2002}
 Der Satellit empfängt das Signal dopplerverschoben:
 \begin{equation}
+\label{equ:doppler1}
  \nu_R = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}(1-\frac{v}{c})\nu_E
 \end{equation}
 und antwortet unmittelbar mittels einer 8-Watt Sendeanlage (Antennendurchmesser: 137 cm\cite{Markwardt2002}) und eines Transponders
@@ -70,6 +71,7 @@ Gleichung \ref{equ:Faktor} muss also durch folgendes ersetzt werden.
 \begin{equation}
 \nu'_R = \frac{240}{221}\nu_R - \eta\nu_{Spin} \quad \mathrm{mit}  \quad \eta = 1+ \frac{240}{221}
 \end{equation}
+Die Durchschnittliche Rotationsgeschwindigkeit liegt bei etwa 4,4 Umdrehungen pro Minute (rpm).\cite{Markwardt2002}
 Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 verfügbar, als das DSN aufhörte Spinkalibrationen durchzuführen. Für spätere Daten muss der Spin des Raumschiffes durch Interpolation der Datenpunkte und den Daten des Imaging Photo Polarimeter (IPP) berechnet werden. Nach dem Manöver am 6 Juli 1993 reiche die Energie jedoch für dessen Betrieb nicht mehr aus. Analysten konnten jedoch noch etwa alle 6 Monate eine grobe Abschätzung des Spins aus Informationen der Conscan-Manöver erhalten. % Conscan erklären
 %aus Anderson2002:
 %Conscan stands for conical scan. The receiving antenna
@@ -92,10 +94,21 @@ beziehungsweiße der Global Mapping Functions (GMF) berücksichtigt.\cite{Levy20
 
 Gerechnet wurde in der Standard-Epoche J200.0. %mehr, wohin damit?
 
-Die Bewegung der Sonde wurde in baryzentrischen Koordinaten gemäß ICRF beschrieben, % genauer
-da die Erde jedoch sehr dynamisch ist muss – für eine hinreichend genaue Bestimmung der Sondenbahn –
-die Bewegung der Antennen auf der Erdoberfläche unter der Berücksichtigung von Prezission, Nutation,
-siderischen Rotation, Polarbewegung, der Gezeitenkräfte und Platentektonischen Bewegungen berücksichtigt werden.
+Die Bewegung der Sonde wurde in baryzentrischen Koordinaten gemäß ICRF beschrieben. % genauer
+Das die gemessene Geschwindigkeit jedoch die Relativgeschwindigkeit zur auf der Erde stehenden Antenne ist,
+muss man den Einfluss dieser Geschwindigkeit berechnen um die Geschwindigkeit und somit die Sondenbahn im baryzentrischen Koordinatensystem zu erhalten.
+Anders gesagt, enthält die Frequenzverschiebung noch einen weiteren Term, bezüglich der Bewegung der Antenne. Aus Gleichung \ref{equ:doppler1} wird somit:
+\begin{equation}
+\label{equ:doppler3}
+ \nu_R = \frac{(1-\frac{v}{c})}{\sqrt{1-\frac{v^2}{c^2}}} \cdot \frac{\sqrt{1-\frac{v_E^2}{c^2}}}{(1-\frac{v_E}{c})} \cdot \nu_E
+\end{equation}\footnote{Markward gibt in seiner entsprechenden Formel ein $c^2$ anstatt c in Termen an, wir vermuten das es sich dabei nur um einen Tippfehler in der Arbeit handelt.}
+Zusammen mit den Effekten des Spins ergibt sich damit, die gesamte Frequenzverschiebung in Abhängigkeit von der Sondengeschwindigkeit in baryzentrischen Koordinaten zu:
+\begin{equation}
+ \nu'_E = \left[ \frac{240}{221} \nu_E d_{\bar{ER}} - \eta \nu_{Spin} \right]  d_{\bar{RE}}
+\end{equation}
+Wobei $d_{\bar{AB}}$ die Dopplerverschiebungsterme gemäß Gleichung \ref{equ:doppler3} ist.
+Da die Erde jedoch sehr dynamisch ist muss um die Präzision die für diese Belange gewünscht ist, die Geschwindigkeit der Antennen auf der Erdoberfläche unter der Berücksichtigung von Prezission, Nutation,
+siderischen Rotation, Polarbewegung, der Gezeitenkräfte und Platentektonischen Bewegungen bestimmt werden.
 Die Angaben zu Abbremsung, sowie zur Unregelmäßigkeit der Rotation, zur Polbewegung, die Love numbers\footnote{Von AEH Love beschriebene ``Proportionalitätsfaktoren zwischen den verschiedenen Verzerrungen sowie dem sich einstellenden Gravitationsfeld einer sphärisch symmetrischen, nichtrotierenden elastischen isotropen Kugel und einem äußerem an der Kugel angreifenden Grafitationsgradienten''\cite{Dittus2006}} und der Chandler wobble\footnote{Spiralfomiges Schwingen
 der Erdachse mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären? 0,7 Bogensekunden
 wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeit von am Mond von Spiegeln reflektierten Laserpulsen gemessen},
@@ -110,10 +123,10 @@ Die Beobachtungen der Bodenstationen wurden mit Zeitangaben nach der Universal T
 parametrisiert gespeichert. Für die Analysen und
 Berechnungen musste diese Zeitangaben einerseits in die Internationale Atomzeit TAI, andererseits auch in die
 Ephemeridenzeit umgerechnet werden. Auch hierfür verwendete man äußerst genaue Angaben zu Position, Geschwindigkeit und
-Gravitationspotential der Antennen.\cite{Dittus2006}
+Gravitationspotential der Antennen.\cite{Dittus2006} % stimmt das? Ander sagen as anderes...
 
-An dieser Stelle sei erwähnt, das die beiden vorangegangenen Abschnitte sich auf die Berechnungen von Anderson et al. auf dem Jahr 2002 beziehen.
-Wir werden im Nächsten Kapitel sehen, dass es merdere unabhängige Überprüfungen gegeben hat.
+An dieser Stelle sei erwähnt, das die beiden vorangegangenen Abschnitte sich primär auf die Berechnungen von Anderson et al. auf dem Jahr 2002 beziehen.
+Wir werden im Nächsten Kapitel sehen, dass es mehrere unabhängige Überprüfungen gegeben hat.
 Diese verwenden zum Teil andere Koordinaten- und Zeitsysteme.
 So rechnet das Progeramm ODESSEY mit der Barycentric Coordinate Time (TCB) im Barycentric Celestial Reference System (BCRS).
 Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da die unterschiede gering sind und die meisten fortführenden Arbeiten auf die Berechnngen von Anderson et al. aufsetzen.	%fortführende Arbeiten?
@@ -121,7 +134,8 @@ Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da 
 Mann hat sogar einen möglichen Einfluss von mechanischer Deformation der Antennen der Bodenstationen durch ihr eigenes Gewicht,
 Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbezogen.\cite{Dittus2006} % mehr, Quelle (note: <10^-5 a_p)
 
-% Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte.
+% Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte:
+%% Line-of-sight-geschwindigkeit!?
 
 \subsubsection{Archivierung der Messdaten}
 
