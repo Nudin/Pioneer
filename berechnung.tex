@@ -1,4 +1,75 @@
 
+\subsection{Bewegungsgleichungen}
+%Hinweis zur Notation: im folgenden stehen fett gedruckte Variablen für Vektoren.
+Im folgenden werden wir uns an die häufige Notation halten, Vektoren fett zu schreiben. Wir gehen außerdem davon aus, das man die Existenz einer unbekannten anomalen Beschleunigung überprüfen will.
+
+Die Bewegung der Raumsonden wird durch Lösen der Bewegungsgleichungen  bestimmt:
+\begin{equation}
+\frac{d\bf{v}}{dt}=\bf{a_N} + \bf{a_S} + \bf{a_P} + ...
+\end{equation}
+und
+\begin{equation}
+\frac{d\bf{r}}{dt}=\bf{v}
+\end{equation}
+Dabei ist $a_N$ die Beschleunigung die durch die Gravitationskraft, $a_S$ die Beschleunigung durch den solaren Druck und $a_P$ die Pioneeranomalie.  Weitere Effekte können durch zusätzliche Terme berücksichtigt werden, dies erhöht die Genauigkeit verändert jedoch nichts an er Tatsache das die Anomalie existiert, so lassen einige Arbeiten diese Terme weg.
+%Hier auslisten was noch berücksichtigt werden kann?
+Die Gravitative Beschleunigung kann durch Newtonsche Anziehung der Massen berechnet werden:
+\begin{equation}
+\bf{a_N} = \sum_j \frac{GM_j\left(\bf{r_j}-\bf{r}\right)}{\left| \bf{r_j}-\bf{r} \right|^3}
+\end{equation}
+Wobei hier $M_j$ die Massen und $r_j$ die Positionen der Massen sind und $r$ die Position der Sonde ist.
+Für höhere Genauigkeit kann mal relativistische Einflüsse auf die graviative Beschleunigung berechnen. So verwenden Anderson et al. in ihren Arbeit den Parametrisierten Post-Newtonschen-Formalismus (PPN), einer Vereinfachung von Einsteins Gravitationsgleichung für schwache Felder und langsame Geschwindigkeiten.
+Die Details dieses Formalismus gehen jedoch weite über diese Arbeit hinaus.
+Die mit Abstand wichtigste Masse ist natürlich die Sonne, aber auch die Planeten und der Mond müssen berücksichtigt werden. Während \cite{Anderson2002} auch die größten Asteroiden (ca. 0,2 Erdmassen) und Kometen berücksichtigte, ignorierte Markward diese. Grundsätzlich lassen sie die Himmelskörper als Punktmassen beschreiben, lediglich wenn sich die Sonde in der Nähe eines Planten befindet muss die Auswirkung dieses genauer berechnet werden.
+Die Positionen und Massen der Planeten wurden in den früherern Analysen aus der Ephemeride
+DE402, später aus DE405 durch Interpolation entnommen.
+\footnote{\textit{``Jet Propulsion Laboratory Development Ephemeris''} sind durch
+numerische Integration erzeugte Ephemeriden welche primär für die Raumfahrt gedacht sind.}\cite{Anderson2002}
+
+Der Druck durch die von der Sonne ausgehenden Strahlung $a_S$ berechnet man durch:
+\begin{equation}
+a_S = \frac{\mathcal{K}f_\odot A_P}{c M_P} \left| \frac{1\ \mathrm{AU}}{\bf{r}-\bf{r_\odot}} \right|^2 \cos\theta
+\end{equation}
+Dabei ist $r_\cdot$ die Position der Sonne im Koordinatensystem, $M_P$ ist die Masse der Sonde, $A_P$ die von der Sonnenstrahlung betroffene Sondenoberfläche, $f_\odot$ die Solarkonstante, $\mathcal{K}$ der Reflexionskoeffizient und $\theta$ der Winkel unter dem die Oberfläche von der Sonnenstrahlung getroffen wird.
+Zur Vereinfachung wird für $A_P$ die Fläche der Antenne verwendet.
+Da der Winkel $\theta$ immer unter 1.5° wird er zu $\theta = 0\degree$ vereinfacht, was lediglich zu einer Verlust der Genauigkeit von $< 4 \cdot 10^{-12} \frac{cm}{s^2}$.\cite{Markwardt2002}
+
+Die Pioneer-Anomalie – dessen Überprüfung und Bestimmung das Ziel der Untersuchung ist – wird durch folgenden Term ausgedrückt:
+\begin{equation}
+a_P(t) = \left( a_P(0) + j_pt\right)\hat{r}
+\end{equation}
+Wir betrachten also einen konstanten Teil $a_P(0)$ und einen mit der Zeit ansteigenden Teil $j_p$. Der Richtungsvektor $\hat{r}$ zeigt von der Sonde in Richtung Sonne. Dazu später mehr.
+
+% Wohin mit den Manövern?
+
+\subsection{Die Berechnung der Anomalie}
+Um die Anomalie nun zu bestimmen, werden nun die Messdaten an die Bewegungsgleichungen gefittet. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\rem{
 \subsection{Theoretische Berechnungen der Bahn}
 Die ursprüngliche Navigationsberechnung erfolgte durch das Orbital Determination Program (ODP) des JPL.
 Hierbei wird die Bahn im Rahmen des relativistischen Einstein-Infeld-Hoffmann-Modells (EIH Modell)
@@ -48,3 +119,4 @@ Auch diese Software bestätigt die Existenz und Größe der Anomalie.\cite{Levy2
 In einem Idealem System würde man alle zu Verfügung stehenden Daten für die Berechnungen verwenden. Jedoch lässt sich nicht verhindern, dass Messdatenpunkte verfälscht werden. Also muss man eine Strategie finden solche Datenpunkte zu finden und auszuschließen oder zu verbessern, ohne dabei selbst die Messung zu verfälschen. Dabei besteht natürlich die Gefahr unwillkürlich Datenpunkte auszuschließen, so dass die Messwerte mit den theoretischen Modellen besser übereinstimmen.
 Ausreißer in den Messungen wurden ausgeschlossen, wenn sie im ersten Durchlauf eine Abweichung von mehr als 100 Hz von den erwarteten Wert oder in einem höheren Durchlauf des Algorithmuses eine Abweichung von über $6\sigma$ hatten, wobei $\sigma$ die Standardabweichung ist.\cite{Levy2008} % wie hats Anderson gemacht?
 % Points with an elevation inferior to 20◦ are rejected so as to limit the effect of imperfections of atmospherical models.
+}
