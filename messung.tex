@@ -37,6 +37,7 @@ vernachlässigt, was zur einfacheren Form von
  \frac{\nu'_E-\nu_E}{\nu_E} \approx -2\frac{v/c}{1+v/c} \approx -2 \frac{v}{c}
 \end{equation}
 führt.
+Wir haben bisher noch unterschlagen zu erwähnen, dass die oben berechnete Geschwindigkeit die Geschwindigkeit in Richtung in Blickrichtung ist, dies muss bei den Analysen berücksichtigt werden. %oder doch erst unten?
 Sind Sender- und Empfängerantenne die selben, so spricht man von einer zwei-Wege-Messung, wenn Sende und Empfängerantennen unterschiedlich sind spricht man von einer drei-Wege-Messung.\cite{Levy2009} Bei den drei-Wege Doppler-Messungen besteht die Gefahr, dass ein unbekannter Zeitunterschied zwischen den Uhren der Antennen die Messung verfälscht, daher verwendeten manche Analysen diese Daten meist nicht,\cite{Anderson2002} während andere sie mit zwei-Wege-Doppler-Daten gleich behandelte.\cite{Markwardt2002} Darüber hinaus gibt es eine Vielzahl an sogenannten Einwegs-Doppler-Messdaten, wo die Sonde von sich aus die Bodenstation kontaktiert hat. Da die Frequenz der Signalquelle im Weltraumfahrzeug nicht genau genug ist, sind diese Daten für unsere Zwecke unbrauchbar und werden ignoriert. %schon oben, als footnote?
 
 Unabhängig davon lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit $\Delta t$ des Signales bestimmen:
@@ -50,7 +51,7 @@ Somit hat man zwei voneinander unabhängige Messmethoden, was Konsitenzchecks,
 Fehlerminimierung und Ausschluss einiger phänomenologischer Fehler ermöglicht. Nicht zuletzt kann man damit durch Frequenzfehler kommende falsche Dopplerdaten erkennen.\cite{Anderson2002}
 Allerdings wurde dies laut \cite{Anderson2002} nur bei der Analyse der Daten von Galileo und Ulysses (siehe unten), nicht bei den Pioneersonden verwendet. Von den Pioneersonden liegen Laufzeitmessdaten ("ramped-range") nur von der ersten Zeit der Mission vor. Im späteren Verlauf der Mission wurde diese Technik unbrauchbar, da die Bandbreite der Trägerfrequenz zu klein wurde um die modulierten Veränderungen zu detektieren.\cite{Turyshev2010} % "carrier tracking loop bandwidth"->"Bandbreite der Trägerfrequenz" richtig übersetzt? Erklären warum.
 
-Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen.Auch dies fließt in die Analysen mit ein.\cite{Anderson2002} % Wirklich die Phase?
+Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3 dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einem Satz Dopplerdaten gewinnen, voraussetzt dieser ist einige Tage lang. Auch daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung die Entfernung berechnen. Auch dies fließt in die Analysen mit ein.\cite{Anderson2002} % Wirklich die Phase?
 %Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
 
 Laut \cite{Markwardt2002} wurden die Effekte der Dopplerverschiebung auf dem Hinweg bereits beim Senden grob kompensiert, so das die Frequenz des Signals das die Sonde empfängt bei etwa 2.11 GHz liegt.
@@ -63,8 +64,29 @@ Zumindest im Zeitraum von 1987-1994 erfolgten die Messungen einigermaßen regelm
 %Für die Navigation wurde daraus direkt die aktuelle Flugbahn berechnet, wir wollen uns jedoch im Folgendem auf den – für das Thema relevantere – 
 % Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
 
+
+\subsubsection{Archivierung der Messdaten}
+
+Gespeichert wurden die Daten ursprünglich im "Intermediate Data Record"-Format (IDR), nach einer Konversion dann im "Archival Tracking Data File"-Format (ATDF) auf Magnetbändern. Diese enthalten alle vom DSN gemessenen Daten, inklusive Signalstärke, Antennenausrichtung, Frequenz, Entfernung und Störungen.\cite{Turyshev2010} % range und residuals besser übersetzen.
+Viele der ATDF Dateien wurden als Magnetbänder an das NSSDC-Archiv zur Archivierung gesandt, jedoch nicht alle – dazu mehr in Kapitel \ref{daten}.\cite{Markwardt2002}
+Die Radio Metric Data Conditioning group (RMDC) von JPL's Navigations und Missionsentwurfs Abteilung las diese aus und konvertierte sie mit der Software STRIPPER in das Format "Orbit Determination File" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE).
+Darin wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
+– "Compression time" genannt – sowie die Dauer dieser Zeitspanne, der Zeitpunkt in der Mitte des Intervals\footnote{Was dem Zeitpunkt entspricht, als die Raumsonde das Signal empfing\cite{Levy2008}}, die Sendefrequenz und
+Angaben dazu welche DSN Antennen das Signal geschickt und welche es empfangen haben, gespeichert.\cite{Levy2008}
+Auch die Laufzeitmessungen sind in den ODF-Dateien enthalten.\cite{Anderson2002}
+Die Copression time beträgt in der Regel 10 s, 60 s, 600 s oder 1980 s.\cite{Anderson2002} % Stimmt das?
+
+Die ODF-Dateien sind das eigentliche Werkzeug mit welchen die meisten, an der Pioneer Anomalie forschenden, Teams arbeiten. Diese verwenden die ODF Dateien dann entweder direkt, oder wandeln sie in das Format ihrer Software um (im Fall von \cite{Anderson2002} ist das das NAVIO format).
+
+Die Aufzeichnung der Messungen wurde leider nicht so sorgfältig und gründ\-lich durchgeführt, wie man heute für die Analysen gerne hätte, da man die Anomalie ursprünglich für eine "Kuriosität" hielt.\cite{Nieto2005}
+Die Rohdaten wurden von unterschiedlichen Analysten ausgelesen und das oben angesprochene Programm STRIPPER sollte die damals relevanten Navigationsdaten extrahieren\cite{Nieto2005}, wodurch Daten verloren gingen. % merge mit obigen Abschnitt? überprüfen
+Dabei verwendeten die unterschiedlichen Analysten unterschiedliche Modelle und Datenbearbeitungsstrategien.\cite{Nieto2005}
+Darüber hinaus würden die Navigations-Daten nicht sorgfältig archiviert.\cite{Nieto2005}
+Die Auswirkungen davon werden wir in Kapitel \ref{daten} noch diskutieren.
+
+
 \subsubsection{Berücksichtigung weiterer Einflüsse auf die Messung}
-Für die genauere Bestimmung der Bahn muss man einige weitere Einflüsse berücksichtigen, welche wir im folgenden erläutern wollen.
+Für die genauere Bestimmung der Bahn muss man einige Einflüsse auf die Messung berücksichtigen, welche wir im folgenden erläutern wollen.
 
 Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden: Beim "reflektieren" des Signals an der Antenne des drehenden Raumschiffes kommt es zu einer von der Rotationsgeschwindigkeit abhängigen Dopplerverschiebung. Jede Umdrehung der Sonde führt zu einer zusätzlichen Schwingung im Up- und im Down-link. Mit dem Frequenz-Verhältnis von up- und Down-link ergibt sich insgesamt $(1+240/221)$ Schwingungen pro Umdrehung der Sonde.\cite{Anderson2002} %Ist "Schwingungen" das richtige Wort dafür
 Gleichung \ref{equ:Faktor} muss also durch folgendes ersetzt werden.
@@ -72,7 +94,8 @@ Gleichung \ref{equ:Faktor} muss also durch folgendes ersetzt werden.
 \nu'_R = \frac{240}{221}\nu_R - \eta\nu_{Spin} \quad \mathrm{mit}  \quad \eta = 1+ \frac{240}{221}
 \end{equation}
 Die Durchschnittliche Rotationsgeschwindigkeit liegt bei etwa 4,4 Umdrehungen pro Minute (rpm).\cite{Markwardt2002}
-Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 verfügbar, als das DSN aufhörte Spinkalibrationen durchzuführen. Für spätere Daten muss der Spin des Raumschiffes durch Interpolation der Datenpunkte und den Daten des Imaging Photo Polarimeter (IPP) berechnet werden. Nach dem Manöver am 6 Juli 1993 reiche die Energie jedoch für dessen Betrieb nicht mehr aus. Analysten konnten jedoch noch etwa alle 6 Monate eine grobe Abschätzung des Spins aus Informationen der Conscan-Manöver erhalten. % Conscan erklären
+Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 verfügbar, als das DSN aufhörte Spinkalibrationen durchzuführen. Für spätere Daten muss der Spin des Raumschiffes durch Interpolation der Datenpunkte und den Daten des Imaging Photo Polarimeter (IPP) berechnet werden. Nach dem Manöver am 6 Juli 1993 reiche die Energie jedoch für dessen Betrieb nicht mehr aus. Analysten konnten jedoch noch etwa alle 6 Monate eine grobe Abschätzung des Spins aus Informationen der sogenannten Conscan-Manöver erhalten. % Conscan erklären
+Bei ConScan – Kurzform für conical scan, auf deutsch auch Minimumpeilung – wird die Empfangsantenne kreisförmig bewegt und gemessen, wo das Signal am stärksten ist. Führt man dieses Verfahren mehrfach durch, kann man die ideale Ausrichtung der Antenne herausfinden. In Kombination mit einem Ausrichtungsmanöver des Raumfahrzeugs, kann man damit auch die ideale Ausrichtung der Antenne der Sonde bestimmen.\cite{Anderson2002}
 %aus Anderson2002:
 %Conscan stands for conical scan. The receiving antenna
 %is moved in circles of angular size corresponding to one
@@ -87,8 +110,9 @@ Hochqualitative Daten zum Spin sind für Pioneer 10 nur bis zum 17. Juli 1990 ve
 Für die Daten nach 1995 wurden der Spin nicht mehr berechnet, auch wenn dies weiterhin mit den Aufgezeichneten conscan Daten möglich wäre. Außerdem, ist die Spinachse nicht genau identisch mit der Phasenachse, weshalb es eine sehr kleine – aber messbare – Sinusfunktion in den Dopplerdaten gibt. Daraus ließe sich ebenfalls die Spinrate für die Daten von nach 1993 berechnen – dies wurde bisher jedoch noch nicht gemacht.\footnote{Zumindest soweit uns bekannt.}
 Die genaue Spinkalibrierung von Pioneer 11 ist aufgrund des Versagens eines Spin-down-Schubtriebwerks nicht möglich.\cite{Anderson2002}
 
+
 Zu beachten ist, dass die Propagation des Signales vom Medium beeinflusst wird. Der Einfluss von interplanetarer Materie konnte durch Vergleich
-der Daten mit denen der Cassini-Mission analysiert werden, da diese mehere Frequenzbänder verwendet.\cite{Dittus2006} %mehr, richitg, quelle 
+der Daten mit denen der Cassini-Mission analysiert werden, da diese mehrere Frequenzbänder verwendet.\cite{Dittus2006} %mehr, richitg, quelle 
 Der Einfluss der Ionosphäre und der Troposphäre auf das Singal wurde durch Implementation der International Reference Ionosphere (IRI)
 beziehungsweiße der Global Mapping Functions (GMF) berücksichtigt.\cite{Levy2008} % Anderson auch?; ist das Propagation?; Erklären?
 
@@ -110,7 +134,7 @@ Wobei $d_{\bar{AB}}$ die Dopplerverschiebungsterme gemäß Gleichung \ref{equ:do
 Da die Erde jedoch sehr dynamisch ist muss um die Präzision die für diese Belange gewünscht ist, die Geschwindigkeit der Antennen auf der Erdoberfläche unter der Berücksichtigung von Prezission, Nutation,
 siderischen Rotation, Polarbewegung, der Gezeitenkräfte und Platentektonischen Bewegungen bestimmt werden.
 Die Angaben zu Abbremsung, sowie zur Unregelmäßigkeit der Rotation, zur Polbewegung, die Love numbers\footnote{Von AEH Love beschriebene ``Proportionalitätsfaktoren zwischen den verschiedenen Verzerrungen sowie dem sich einstellenden Gravitationsfeld einer sphärisch symmetrischen, nichtrotierenden elastischen isotropen Kugel und einem äußerem an der Kugel angreifenden Grafitationsgradienten''\cite{Dittus2006}} und der Chandler wobble\footnote{Spiralfomiges Schwingen
-der Erdachse mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären? 0,7 Bogensekunden
+der Erdachse um 0,7 Bogensekunden mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären?
 wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeit von am Mond von Spiegeln reflektierten Laserpulsen gemessen},
 Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von Laserpulsen zwischen einem Satellit und der Bodenstation gemessen} und Very Long Baseline Interferometry
 (VLBI)\footnote{Dabei werden von zwei, interkontinental weit entfernten Radioteleskopen, die Signale inklusive
@@ -134,32 +158,11 @@ Dies spielt jedoch für die betrachtung im Rahmen dieser Arbeit keine Rolle, da 
 Mann hat sogar einen möglichen Einfluss von mechanischer Deformation der Antennen der Bodenstationen durch ihr eigenes Gewicht,
 Alterung, Wind, Tektonik, etc. abgeschätzt, und in die Fehlerrechnung mit einbezogen.\cite{Dittus2006} % mehr, Quelle (note: <10^-5 a_p)
 
-% Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte:
-%% Line-of-sight-geschwindigkeit!?
-
-\subsubsection{Archivierung der Messdaten}
-
-Gespeichert wurden die Daten ursprünglich im "Intermediate Data Record"-Format (IDR), nach einer Konversion dann im "Archival Tracking Data File"-Format (ATDF) auf Magnetbändern. Diese enthalten alle vom DSN gemessenen Daten, inklusive Signalstärke, Antennenausrichtung, Frequenz, Entfernung und Störungen.\cite{Turyshev2010} % range und residuals besser übersetzen.
-Viele der ATDF Dateien als Magnetbänder an das NSSDC-Archiv zur Archivierung gesandt, jedoch nicht alle – dazu mehr in Kapitel \ref{daten}.\cite{Markwardt2002}
-Die Radio Metric Data Conditioning group (RMDC) von JPL's Navigations und Missionsentwurfs Abteilung las diese aus und konvertierte sie mit der Software STRIPPER in das Format "Orbit Determination File" (ODF\footnote{Nicht zu verwechseln mit dem verbreiteten Officeformat ODF.} oder ODFILE).
-Darin wird darin der durchschnittliche Dopplerdrift über eine gewisse Zeitspanne
-– "Compression time" genannt – sowie die Dauer dieser Zeitspanne, der Zeitpunkt in der Mitte des Intervals\footnote{Was dem Zeitpunkt entspricht, als die Raumsonde das Signal empfing\cite{Levy2008}}, die Sendefrequenz und
-Angaben dazu welche DSN Antennen das Signal geschickt und welche es empfangen haben, gespeichert.\cite{Levy2008}
-Auch die Laufzeitmessungen sind in den ODF-Dateien enthalten.\cite{Anderson2002}
-Die Copression time beträgt 10 s, 60 s, 600 s oder 1980 s.\cite{Anderson2002} % Stimmt das?
-
-Die ODF-Dateien sind das eigentliche Werkzeug mit welchen die meisten, an der Pioneer Anomalie forschenden, Teams arbeiten. Diese verwenden die ODF Dateien dann entweder direkt, oder wandeln sie in das Format ihrer Software um (im Fall von \cite{Anderson2002} ist das das NAVIO format).
-
-Die Aufzeichnung der Messungen wurde leider nicht so sorgfältig und gründ\-lich durchgeführt, wie man heute für die Analysen gerne hätte, da man die Anomalie ursprünglich für eine "Kuriosität" hielt.\cite{Nieto2005}
-Die Rohdaten wurden von unterschiedlichen Analysten ausgelesen und das oben angesprochene Programm STRIPPER sollte die damals relevanten Navigationsdaten extrahieren\cite{Nieto2005}, wodurch Daten verloren gingen. % merge mit obigen Abschnitt? überprüfen
-Dabei verwendeten die unterschiedlichen Analysten unterschiedliche Modelle und Datenbearbeitungsstrategien.\cite{Nieto2005}
-Darüber hinaus würden die Navigations-Daten nicht sorgfältig archiviert.\cite{Nieto2005}
-
+% Es fehlt u.U. noch einige weitere Dinge die man hier erwähnen sollte
 
 % (wo) kommt das rein:
 % Da die im ODF format gespeicherten Messdaten nur die Zeit t2 (Signal an der Sonde) nicht jedoch
 % die Zeitpunkte t1 (Sendezeitpunkt auf der Erde) und t3 (Empfangszeitpunkt auf der Erde) enthalten,
 % müssen dise für die spätere Verwendung in Analysen durch Schritweiße Berechnung der
 % "relativistic light time equations"" aus t2 errechnen.\cite{Levey2009} %FIXME: begriff übersetzen
-
 
