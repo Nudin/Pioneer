@@ -7,6 +7,22 @@
 \usepackage{graphicx}
 \usepackage{epsfig}
 \usepackage{hyperref}
+
+\usepackage[percent]{overpic}
+\usepackage{color}
+\usepackage{subfig}
+\usepackage{placeins}
+\usepackage{epsfig}
+\usepackage{gensymb}
+\usepackage{supertabular}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage[all]{xy}
+
 \hypersetup{
 %    bookmarks=true,
     pdftoolbar=true,
@@ -24,13 +40,7 @@
     filecolor=black,
     urlcolor=blue
 }
-
-\usepackage[percent]{overpic}
-\usepackage{color}
-\usepackage{subfig}
-\usepackage{placeins}
-\usepackage{epsfig}
-\usepackage{gensymb}
+\linespread{1.359140914229522617680} 
 
 \newcommand{\rem}[1]{}
 
@@ -61,14 +71,22 @@
 \input{variabel}
 
 \bigskip
-\bigskip
 
-\section{Zukünftige Forschung}
-\input{alte_u_neue_daten}
-\input{richtung}
+\input{klassisch}
+\input{Dm}
+\input{De}
 
 \bigskip
 \input{mond}
+
+\bigskip
+
+\section{Zukünftige Forschung}
+\input{OffeneFragen}
+\input{alte_u_neue_daten}
+\input{missionen}
+
+\input{andere}
 
 % ToDo:
 %% - Wohin mit
@@ -88,6 +106,12 @@
 %% - evtl. Anführungszeichen richten
 %% - Namen im Text vereinheitlichen
 %% - Ref zu Bild 3 (und anderen?) fixen
+%% - Tabelle (Flo) fixen
+%% - Tabelle (Judith)
+%% - Fusnote (Flo)
+%% - Onlinequellen
+%% - Subsubsubsection
+%% - Collaboration
 
 \bibliography{lit}{}
 \bibliographystyle{hunsrtdin}
