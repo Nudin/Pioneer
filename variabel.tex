@@ -1,25 +1,23 @@
 
 \subsection{Variabler Teil}
 Während in Normalfall die Anomalie als konstante Beschleunigung angesehen wird, wiesen betreits Anderson et al. in
-ihrer Arbeit im Jahr 2002 darauf hin, dass es periodische Anteile von etwa 10\% in der Pioneeranomalie zu
+ihrer Arbeit im Jahr 2002 darauf hin, dass es periodische Anteile von etwa 10\% in der Pioneer-Anomalie zu
 geben scheint.
-Im Jahr 2008 zeigte die GAP, dass sich die Qualität des Fits nennenswert steigern lässt, wenn man zusätzlich zur konstanten Beschleunigung periodische Terme verwendet.
+Im Jahr 2008 zeigte die GAP\cite{Levy2008}, dass sich die Qualität des Fits nennenswert steigern lässt, wenn man zusätzlich zur konstanten Beschleunigung periodische Terme verwendet.
 Dabei ist es ihnen gelungen, eine Beziehung zwischen dem Unterschied der Azimutalwinkel zwischen Sonde und Erde sowie
-den zeitlich veränderlichen Anteilen der Pioneeranomalie zu finden. %bäh
+den zeitlich veränderlichen Anteilen der Pioneer-Anomalie zu finden. %bäh
 
 \begin{figure}[htnb]
 \begin{minipage}[t]{.48\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{images/SparSpec_begining}
-	\label{fig:SparSpec_pre}
-  \caption{SparSpec Analyse der Abweichungen nach einem Fit mit konstanter Anomalie, ohne variable Terme.}
+  \caption{SparSpec Analyse der Abweichungen nach einem Fit mit konstanter Anomalie, ohne variable Terme.}\label{fig:SparSpec_pre}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{.48\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{images/SparSpec_end}
-	\label{fig:SparSpec_post}
-  \caption{... und mit variablen Termen.}
+  \caption{... und mit variablen Termen.}\label{fig:SparSpec_post}
 \end{minipage}
  \end{figure}
 
@@ -30,7 +28,7 @@ $f_3=189\pm32\ Tagen$, wobei $ 1\ Tag = 60 \cdot 60 \cdot 24 \:s = 86400\:s$ ist
 Bedenkt man das 1.0 siderischer Tag = 0.9972 Tage ist, so entspricht dies genau halbtägigen, täglichen und halbjährlichen Schwankungen.
 
 Die Ursache für diese periodischen Terme dürfte nach gängiger Ansicht nicht in den Sonden zu suchen sein. Fehler im atmosphärischen Modell wären eine naheliegende Ursache für tägliche Variationen. Da diese jedoch von den Konditionen bei den Einrichtungen des DSN abhängen, müssten sie mit der Periode des Sonnentags und nicht des siderischen Tages verlaufen\cite{Levy2009}.
-Anderson et al. ziehen für die Variationen Modellierungsfehler – wie Fehler in den Ephemeriden oder der Ausrichtung der Drehachse der Erde, oder fehlerhafte oder zu ungenaue Koordinaten der Messstationen – in Betracht\cite{Levy2009}\cite{Dittus2006}. % originalquelle?
+Anderson et al. ziehen für die Variationen Modellierungsfehler – wie Fehler in den Ephemeriden oder der Ausrichtung der Drehachse der Erde, oder fehlerhafte beziehungsweiße zu ungenaue Koordinaten der Messstationen – in Betracht\cite{Levy2009}\cite{Dittus2006}. % originalquelle?
 Die Gruppe um Levey (GAP) hält dies jedoch für unwahrscheinlich, da diese Daten durch andere Beobachtungsmethoden
 stark gestützt werden und es somit schwer wäre sie stark genug zu verändern um die gemessenen Effekte zu erklären. %Markward: Position offen geht auch
 
@@ -41,17 +39,17 @@ Die Beeinflussung des Signals wird nun mit Fourierkoeffizienten ($\upsilon_n$ un
 \begin{equation}
 \Delta f = \sum_n (\upsilon_n(cos(n\varphi_u)+cos(n\varphi_d))+\upsilon'_n(sin(n\varphi_u)+sin(n\varphi_d))
 \end{equation}
-wobei $\varphi_u$ und $\varphi_d$ die Winkel $\varphi$ bei Up- beziehungsweise Down-link sind.
+wobei $\varphi_u$ und $\varphi_d$ die Winkel $\varphi$ bei Up- beziehungsweise Downlink sind.
 Nun können wir die die Fourierkoeffizienten sowie die konstante Anomalie an die Messwerte fitten. Wir verwenden dabei n = 1 und 2, das Hinzufügen von höheren Ordnungen bringt keine nennenswerte Verbesserung.
 
 Dieses geometrische Modell beschreibt sowohl die täglichen als auch die jährlichen
-Schwankungen und verringert die Standardabweichung der Messwerten von 9.8 mHz auf 5.5 mHz.
+Schwankungen und verringert die Standardabweichung der Messwerte von 9.8 mHz auf 5.5 mHz.
 Auch die Spektralanalyse (Abb. \ref{fig:SparSpec_post}) dieses Fits zeigt die Verbesserung deutlich\cite{Levy2008}. % Besser zitieren
 %mehr, weiter, ...
 
 % Wie hängt das folgende mit dem obigen zusammen:
 Nieto und Anderson weisen in \cite{Nieto2005} des weiteren darauf hin, das sich die jährliche zeitliche Änderung der Anomalie %von wann
-grob durch eine Sinuswelle beschreiben lässt. Im Falle von Pioneer 10 hat diese eine Amplitude von $(0.525\pm0.155)\cdot10^{-8}cm/s^{-2}$ und im Fall von Pioneer 11 $(0.498\pm0.176)\cdot10^{-8}cms^{-2}$. Der Phasenunterschied der beiden Wellen beträgt 173.2°, was in etwa dem Winkelunterschied zwischen den ekliptikalen Längen\footnote{Ekliptikale Länge/Breite sind die zwei Himmelskoordinaten des ekliptikalen Koordinatensystems, welche die Ekliptik als Referenz zur Angabe der Position eines Objekts am Himmel verwendet.} der Flugrichtungen der Raumsonden entspricht, während die Amplituden etwa proportional zum Cosinus der ekliptikalen Breiten sind.
+grob durch eine Sinuswelle beschreiben lässt. Im Falle von Pioneer 10 hat diese eine Amplitude von $(0.525\pm0.155)\cdot10^{-8}cm/s^{2}$ und im Fall von Pioneer 11 $(0.498\pm0.176)\cdot10^{-8}cm/s^{2}$. Der Phasenunterschied der beiden Wellen beträgt 173.2°, was in etwa dem Winkelunterschied zwischen den ekliptikalen Längen\footnote{Ekliptikale Länge/Breite sind die zwei Himmelskoordinaten des ekliptikalen Koordinatensystems, welche die Ekliptik als Referenz zur Angabe der Position eines Objekts am Himmel verwendet.} der Flugrichtungen der Raumsonden entspricht, während die Amplituden etwa proportional zum Cosinus der ekliptikalen Breiten sind.
 
 %Wohin damit:
 Für die Betrachtung der veränderlichen Anteile der Anomalie muss die Kompressionszeit der Daten natürlich immer entsprechend kurz sein\cite{Nieto2005}.

@@ -1,78 +1,87 @@
-\section{Klassische Erkl\"arungen}
+\section{Klassische Erkl\"arungen}\label{klassisch}
 
 Bevor man neue Theorien aufstellt um diese ungew\"ohnliche
 Beschleunigung zu erkl\"aren, sollte man sich zun\"achst die
 klassischen Erkl\"arungen ansehen, die die Beschleunigung erkl\"aren
 k\"onnten bzw. eine Fehlerabsch\"atzung der Beschleunigung geben
-k\"onnen. Hierzu teilt man die Daten von Pioneer 10 in drei Intervalle
+k\"onnen. Hierzu teilte Anderson et al. \cite{Anderson2002} die Daten von Pioneer 10 in drei Intervalle
 ein, die man durch den steigenden Abstand zur Sonne und Einfl\"usse von
-anderen Himmelsk\"orpern abgrenzen muss. (Abb. XXXXX Aus Study of the
-anomalous acceleration.... Fig. 13)
+anderen Himmelsk\"orpern abgrenzen muss. (Abb. \ref{fig:intervalle})
 
-\subsection{Externe Fehlerquellen}
+\begin{figure}[htbn]
+\begin{center}
+\noindent    
+\psfig{figure=images/intervalle,width=0.8\linewidth,height=\textheight,keepaspectratio}
+\end{center}
+\vskip -10pt
+  \caption{Abgrenzung der drei Datenintervalle von Pioneer 10 \cite{Anderson2002}}
+\label{fig:intervalle}
+\end{figure} 
+
+\subsection{Externe Fehlerquellen}\label{extern}
 
 \subsubsection{Strahlungsdruck der Sonne}
 
-Durch den Impuls den die Photonen der Sonne auf die Fl\"ache der Sonde
+Durch den Impuls den die Photonen des Sonnenlichts auf die Fl\"ache der Sonde
 \"ubertragen entsteht eine Kraft und damit letztlich auch eine
 Beschleunigung. Diese ist zwar in Flugrichtung gerichtet, muss aber
-f\"ur eine Fehlerrechnung zuerst betrachtet werden. Ein Modell f\"ur
+f\"ur eine Fehlerrechnung und einer genauen zuerst betrachtet werden. Ein Modell f\"ur
 den Strahlungsdrucks gab es schon vor Pioneer 10 und 11. Dieses Modell
 formuliert eine Beschleunigung in Abh\"angigkeit der Ausrichtung und
-Entfernung der Sonde zur Sonne. 
+Entfernung der Sonde zur Sonne.
 
 \begin{equation}\label{eins}
-a_{\mathit{sd}}(r)=\frac{\kappa f_{s}A\cos \theta
+a_{\mathit{sd}}(r)=-\frac{\kappa f_{s}A\cos \theta
 (r)}{cMr^{2}}
 \end{equation}
 
+Dabei sind:
 \begin{itemize}
-\item Mit  $\mathit{f_s}=1367W/(\mathit{mAU})^2$
-\item $A=r^2\pi =(1,37m)^2\pi $(als Fl\"ache f\"ur die Sonde wird vereinfacht
+\item $\mathit{f_s}=1367W/(\mathit{m\cdot AU})^2$
+\item $A=r^2\pi =(1,37m)^2\pi $ (als sonnenzugewandte Oberfl\"ache der Sonde wird vereinfacht
 die Fl\"ache der Parabolantenne verwendet)
-\item  $\theta $ ist der Winkel zwischen der Achse der Sonde und der Richtung
-der Sonne
+\item $\theta $ ist der Winkel unter dem die Photonen auf $A$ treffen. Da der Winkel immer unter 1.5° ist wird er zu $\theta = 0\degree$ vereinfacht, was lediglich zu einem Verlust an Genauigkeit von $< 4 \cdot 10^{-12} \frac{cm}{s^2}$\cite{Markwardt2002} führt.
 \item $c$ ist die Lichtgeschwindigkeit
-\item $M$ ist die nominelle Masse der Sonde, zu dem Zeitpunkt an dem die H\"alfte des
+\item $M$ ist die nominelle Masse der Sonde, zum Zeitpunkt an welchem die H\"alfte des
 Treibstoffs verbraucht war (F\"ur Pioneer 10 wurden 241 kg angenommen)
 \item $r$ ist der Abstand Sonde-Sonne in AU
 \item $\kappa $ ist der effektive Absorptions/Reflexions-Koeffizient. F\"ur
-Pioneer 10 wurde ein $\kappa_0=1,71 ermittelt$\cite{Anderson2002}.
+Pioneer 10 wurde ein $\kappa_0=1,71 $ ermittelt\cite{Anderson2002}.
 \end{itemize}
 
 \bigskip
 
-So erh\"alt man bei einem Abstand von 5,2 AU eine Beschleunigung von 
-$(70,0\pm 3,5)\cdot 10^{-8}\mathit{cm}/s^{2}$ mit $\kappa_{5,2 AU}=1,77$.
+So erh\"alt man bei einem Abstand von 5,2 AU eine Beschleunigung von
+$-(70,0\pm 3,5)\cdot 10^{-8}\mathit{cm}/s^{2}$ mit $\kappa_{5,2 AU}=1,77$.
 Da der Strahlungsdruck wie alle anderen
-Gesetze im 3-dimensionalen Raum den  $1/r^{2}$ Gesetzt folgt, war die
-Beschleunigung bei 10 AU \ noch  $18,9\cdot 10^{-8}\mathit{cm}/s^{2}$
-und bei 70 AU nur noch  $0,39\cdot 10^{-8}\mathit{cm}/s^{2}$. Da der
+Gesetze im 3-dimensionalen Raum dem $1/r^{2}$ Gesetzt folgt, war die
+Beschleunigung bei 10 AU noch $-18,9\cdot 10^{-8}\mathit{cm}/s^{2}$
+und bei 70 AU nur noch $-0,39\cdot 10^{-8}\mathit{cm}/s^{2}$. Da der
 Strahlungsdruck der Sonne sehr genau von den Auswertungsprogrammen
 modelliert werden kann, liegt der Fehler f\"ur Pioneer 10 zwischen 40
-und 70 AU bei  $0,001\cdot 10^{-8}\mathit{cm}/s^{2}$ und f\"ur Pioneer
-11 zwischen 22 und 32 AU bei  $0,006\cdot 10^{-8}\mathit{cm}/s^{2}$
+und 70 AU bei $0,001\cdot 10^{-8}\mathit{cm}/s^{2}$ und f\"ur Pioneer
+11 zwischen 22 und 32 AU bei $0,006\cdot 10^{-8}\mathit{cm}/s^{2}$
 
 Da die Masse durch die Verbrennung von Treibstoff mit der Zeit auch
-ver\"anderte, erh\"alt man f\"ur die Ver\"anderung von  $a_{p}$ f\"ur
+ver\"anderte, erh\"alt man f\"ur die Ver\"anderung von $a_{p}$ f\"ur
 die 3 Intervalle\cite{Anderson2002}:
 
 \begin{equation}
 \mathit{\delta a}_{p}=[(0,040\pm 0,035),(0,029\pm 0,025),(0,020\pm
 0,017)]\cdot 10^{-8}\mathit{cm}/s^{2}
 \end{equation}
-Man bildet das gewichtete Mittel und erh\"alt f\"ur 
+Man bildet das gewichtete Mittel und erh\"alt f\"ur
 
 \begin{equation}
 a_{\mathit{sd}}=(0,03\pm 0,01)\cdot 10^{-8}\mathit{cm}/s^{2}
 \end{equation}
 
-Wenn man nun f\"ur Pioneer 11 das gleiche durchf\"uhrt erh\"alt man 
+Wenn man nun f\"ur Pioneer 11 das gleiche durchf\"uhrt erh\"alt man
 \begin{equation}
 a_{\mathit{sd}}=(0,09\pm 0,21)\cdot 10^{-8}\mathit{cm}/s^{2}
 \end{equation}
 
-Dies kann nicht die Anomalie erkl\"aren und ist damit nur f\"ur die
+Dies kann nicht die Anomalie erkl\"aren. Ist jedoch f\"ur die
 Fehlerrechnung interessant.
 
 
@@ -81,21 +90,20 @@ Fehlerrechnung interessant.
 \subsubsection{Der Sonnenwind}
 
 Der Sonnenwind beschleunigt die Pioneers \"ahnlich wie Gl. \ref{eins}, nur das
-man  $\frac{f_{s}}{c}$ \ durch  $m_{p}v^{2}n$ ersetzt. Hier ist 
-$n{\approx}5/\mathit{cm}^{3}$ die Photonendichte bei 1 AU und 
+man $\frac{f_{s}}{c}$ \ durch $m_{p}v^{2}n$ ersetzt. Hier ist
+$n{\approx}5/\mathit{cm}^{3}$ die Protonendichte bei 1 AU und
 $v{\approx}400\mathit{km}/s$ die Windgeschwindigkeit. So erh\"alt
 man\cite{Anderson2002}:
 \begin{equation}
-a_{\mathit{sw}}(r)=\frac{\kappa _{\mathit{sw}}m_{p}v^{2}nA\cos \theta
-}{Mr^{2}}\approx 1,11\cdot
+a_{\mathit{sw}}(r)=-\frac{\kappa _{\mathit{sw}}m_{p}v^{2}nA\cos \theta
+}{Mr^{2}}\approx -1,11\cdot
 10^{-11}(20\frac{\mathit{AU}}{r})^{2}\mathit{cm}/s^{2}
 \end{equation}
 
-Da die Photonendichte um 100\% schwanken kann, ist die tats\"achliche
-Beschleunigung unvorhersehbar. Doch selbst bei der konservativen
-Annahme, dass diese Beschleunigung nur um zwei Gr\"o{\ss}enordnungen
-kleiner ist als die des Strahlungsdrucks, erh\"alt man eine zu
-vernachl\"assigende Gr\"o{\ss}e. 
+Da die Protonendichte um 100\% schwanken kann, ist die tats\"achliche
+Beschleunigung unvorhersehbar. Unter der konservativen
+Annahme, dass diese Beschleunigung um zwei Gr\"o{\ss}enordnungen
+kleiner ist als die des Strahlungsdrucks, ist sie zu vernachl\"assigenden.
 
 
 \bigskip
@@ -103,44 +111,42 @@ vernachl\"assigende Gr\"o{\ss}e.
 \subsubsection{Die Effekte der Sonnencorona}
 
 Wie in Abschnitt 3.1.2 gesehen, ist der Effekt des Sonnenwindes auf die
-Beschleunigung der Sonden zu vernachl\"assigen. Jedoch muss man den
+Beschleunigung der Sonden vernachl\"assigbar. Jedoch muss man den
 Einfluss der Sonnencorona auf die Radiosignale ber\"ucksichtigen. Denn
 die Elektronendichte und der Gradient der Elektronendichte beeinflussen
-die Ausbreitung von Radiowellen in einem Medium. Hier l\"asst die
-Zeitverz\"ogerung einer S-Band Welle auf einem Weg  $l$ beschreiben als
+die Ausbreitung von Radiowellen in einem Medium. Die Zeitverz\"ogerung einer S-Band Welle auf einem Weg $l$ l\"asst sich beschreiben als
 \begin{equation}
 \Delta t=\frac{\pm 1}{2\mathit{cn}_{\mathit{krit}}(\nu )}\int
 _{\mathit{Sonnenmittelpunkt}}^{\mathit{Sonnencorona}}n_{e}(t,r)\mathit{dl}
 \end{equation}
 \cite{Anderson2002}
 
+Mit
 \begin{itemize}
-\item Mit $n_{\mathit{krit}}(\nu )=1,240\cdot 10^{4}(\frac{\nu
+\item $n_{\mathit{krit}}(\nu )=1,240\cdot 10^{4}(\frac{\nu
 }{1}\mathit{MHz})^{2}\frac{1}{\mathit{cm}^{3}}$ ist die kritische
-Plasmadichte f\"ur eine Tr\"agerfrequenz  $\nu $
+Plasmadichte f\"ur eine Tr\"agerfrequenz $\nu $
 
 \item $n_{e}(t,r)$ ist die freie Elektronendichte im Sonnenplasma
+\item Das positive Vorzeichen ist f\"ur Laufzeitdaten und das negative
+f\"ur Dopplerdaten
 \end{itemize}
 
-Das positive Vorzeichen ist f\"ur Entfernungsdaten und das negative
-f\"ur Dopplerdaten.
-
-Um den Einfluss der Sonnencorona auf die S-Band Radiowellen der
+Um den Einfluss der Sonnencorona auf die Radiowellen der
 Pioneer-Sonden zu verstehen, kann die Elektronendichte der Corona als
 Summe einer statischen und einer ver\"anderlichen Elektronendichte
 modelliert werden. Da der ver\"anderliche Teil \ kaum Einfluss auf
 Dopplerdaten hat\cite{Anderson2002}, reicht es ein statisches Modell der Sonnencorona
 zu betrachten. F\"ur dieses Modell erh\"alt man eine freie
-Elektronendichte
+Elektronendichte von\cite{Anderson2002}:
 
 \begin{equation}
 n_{e}(r,t)=A(\frac{R_{s}}{r})^{2}+B(\frac{R_{s}}{r})^{2,7}\cdot
 e^{-[\frac{\Phi }{\Phi _{0}}]^{2}}+C(\frac{R_{s}}{r})^{6}
 \end{equation}
-\cite{Anderson2002}
 
-Aus den Daten der Cassini-Mission wurden f\"ur die Parameter A,B und C
-folgende Werte ermittelt:
+Aus den Daten der Cassini-Mission wurden f\"ur die Parameter A,B und C die
+folgenden Werte ermittelt:
 
 \begin{equation*}
 A=6,0\cdot 10^{3}m
@@ -151,16 +157,14 @@ B=2,0\cdot 10^{4}m
 \begin{equation*}
 C=0,6\cdot 10^{6}m
 \end{equation*}
-Das ist das {\quotedblbase}Cassini Corona Model``. Die
-Auswertungsprogramme ODP/Sigma und CHASMP haben nun f\"ur den Fehler
-der Dopplermessung der Beschleunigung aufgrund der Sonnencorona den
+Dies nennt man das {\quotedblbase}Cassini Corona Model``. Die
+Auswertungsprogramme ODP/Sigma und CHASMP haben f\"ur den Fehler der Beschleunigung aufgrund der Sonnencorona den
 Wert
 
 \begin{equation}
 \sigma _{\mathit{corona}}=\pm 0,02\cdot
 10^{-8}\mathit{cm}/s^{2}
-\end{equation} 
-
+\end{equation}
 berechnet\cite{Anderson2002}.
 
 
@@ -171,40 +175,41 @@ berechnet\cite{Anderson2002}.
 Es ist nicht unwahrscheinlich dass die Sonden eine Ladung tragen, die im
 elektromagnetischen Feld des Sonnensystems einen Einfluss auf die
 Geschwindigkeit hat. Die magnetische Feldst\"arke im \"au{\ss}eren
-Sonnensystem liegt bei unter  $10^{-5}\mathit{Gauss}$\cite{Anderson2002}.
-Unter der Annahme dass die Sonden eine maximale Ladung von  $0,1-1,8\mu
-C$
-\footnote{	%% ### Fussnote nicht mehr auf zwei Seiten splitten
+Sonnensystem liegt bei unter $10^{-5}\mathit{Gauss}$\cite{Anderson2002}.
+Unter der Annahme dass die Sonden eine maximale Ladung von $0,1-1,8\mu
+C$\footnote{ %% ### Fussnote nicht mehr auf zwei Seiten splitten
 Ich gebe hier deshalb einen Bereich an, da die Angaben in \cite{Null1976} auf der Tatsache beruhen, dass
 Pioneer 10 bei Jupiter eine magnetische Feldst\"arke von 1,135 Gau{\ss}
 gemessen h\"atte. Dies ist aber laut \cite{Anderson2002}, S. 29 falsch, da f\"ur Pioneer 10 nur eine
 magnetische Feldst\"arke von 0,185 Gau{\ss} gemessen wurde (Pioneer 11
 ma{\ss} durch ihre gr\"o{\ss}ere Ann\"aherung 1,135 Gau{\ss}).
-
 \begin{equation*}
-B=\frac{F_{B}}{\mathit{qV}}\ \ \mathit{mit}\ \ F=m\cdot
+B=\frac{F_{B}}{\mathit{qv}}\ \ \mathit{mit}\ \ F=m\cdot
 a\ \ \mathit{ergibt}\mathit{sich}\mathit{f\text{\"u}r}\mathit{die}\mathit{Ladung}\ \ q=\frac{\mathit{ma}}{\mathit{BV}}
 \end{equation*}
 mit \cite{Anderson2002}, S. 29:
-
 \begin{equation*}
-\begin{gathered}V=14,36\cdot 10^{3}m/s\\B=0185\cdot
-10^{-4}T\\m=241\mathit{kg}\\a=20\cdot 10^{-10}m/s^{2}\end{gathered}
+\begin{gathered}v=14,36\cdot 10^{3}m/s;\ B=0,185\cdot
+10^{-4}T;\ m=241\mathit{kg};\ a=20\cdot 10^{-10}m/s^{2}\end{gathered}
 \end{equation*}
 ergibt sich:
-
 \begin{equation*}
 q=1,8143\mu C
-\end{equation*}
-}
-tragen k\"onnen errechnet sich eine Beschleunigung von 
+\end{equation*}}
+tragen k\"onnen errechnet sich eine Beschleunigung von
 \begin{equation}
-a=\frac{\mathit{BqV}}{M}=\frac{1\cdot 10^{-9}T\cdot 1\cdot
+a=\frac{\mathit{Bqv}}{M}=\frac{1\cdot 10^{-9}T\cdot 1\cdot
 10^{-6}C\cdot 14,36\cdot 10^{3}m/s}{251,883\mathit{kg}}=5,7\cdot
 10^{-14}m/s^{2}
 \end{equation}
+Mit 
+\begin{itemize}
+\item $B$ ist die magnetische Flussdichte
+\item $q$ ist die Ladung der Sonde
+\item $v$ ist die Geschwindikeit der Sonde
+\end{itemize}
 
-Diese Beschleunigung kann man vollst\"andig vernachl\"assigen. 
+Diese Beschleunigung kann man vollst\"andig vernachl\"assigen.
 
 
 \bigskip
@@ -217,23 +222,32 @@ gleichm\"a{\ss}ige Verteilung, 2) eine 2:1 Resonanz Verteilung \ mit
 einem Maximum bei 47,8 AU und 3) eine 3:2 Resonanz Verteilung mit einem
 Peak bei 39,4 AU. Die letzten 2 Verteilungen wurden deswegen
 ausgew\"ahlt, da diese Verh\"altnisse bei dem Resonanzeffekt von Neptun
-auf Pluto beobachtet wurden. Abb.\#\# zeigt die Beschleunigung auf
-Pioneer 10 von 30 bis 65 AU. So erh\"alt man eine Beschleunigung in der
-Gr\"o{\ss}enordnungen von  $10^{-9}\mathit{cm}/s^{2}$. \ In Abb.\#\#
+auf Pluto beobachtet wurden. Abb.\ref{fig:kuiper} zeigt die Beschleunigung auf
+Pioneer 10 von 30 bis 65 AU. Hier erkennt man eine Beschleunigung in der
+Gr\"o{\ss}enordnung von $10^{-9}\mathit{cm}/s^{2}$. \ In Abb.\ref{fig:kuiper}
 erkennt man zus\"atzlich, dass die Beschleunigung nicht konstant ist.
 Da der Wert zwei Gr\"o{\ss}enordnungen unter der Anomalie liegt und
 nicht konstant ist, kann man den Kuiperg\"urtel als Ursache der
 Anomalie ausschlie{\ss}en. Infrarotmessungen von 2002 haben eine Masse
 von ca. 0,3 Erdmassen im Kuiperg\"urtel entdeckt. Dies wird in der
-Fehlerrechnung mit \  $\sigma _{\mathit{KG}}=\pm 3\cdot
+Fehlerrechnung mit \ $\sigma _{\mathit{KG}}=\pm 3\cdot
 10^{-10}\mathit{cm}/s^{2}$ ber\"ucksichtigt\cite{Anderson2002}.
 
-[\#\#Abb.. aus 2002 study S.30 fig. 15]
+
+\begin{figure}[htbn]
+\begin{center}
+\noindent    
+\psfig{figure=images/kuiper,width=0.5\linewidth,height=\textheight,keepaspectratio}
+\end{center}
+\vskip -10pt
+  \caption{Mögliche Beschleunigung der Pioneer-Sonden durch die Gravitation des Kuipergürtels \cite{Anderson2002}}
+\label{fig:kuiper}
+\end{figure} 
 
 
 \bigskip
 
-\subsection{Sondeninterne Fehlerquellen}
+\subsection{Sondeninterne Fehlerquellen}\label{intern}
 
 \subsubsection{Radiowellenr\"ucksto{\ss}}
 
@@ -243,33 +257,30 @@ abgestrahlt wird:
 P_{\mathit{SL}}=\int _{0}^{\theta _{\mathit{max}}}\sin \theta \rho
 (\theta )d\theta
 \end{equation}
-
-Mit  $\rho (\theta )$ ist die Leistungsverteilung.
+Dabei ist $\rho (\theta )$ die Leistungsverteilung.
 
 Die Beschleunigung der Sonde durch die Radiowellen l\"asst sich
 berechnen mit:
 \begin{equation}
 b_{\mathit{SL}}=\frac{\beta P_{\mathit{SL}}}{\mathit{Mc}}
 \end{equation}
-
-wobei  $b_{\mathit{SL}}$ von der Erde weg zeigt. Dabei ist  $\beta $ die
+wobei $b_{\mathit{SL}}$ von der Erde weg zeigt. Dabei ist $\beta $ die
 partielle Komponente des Strahlungsmoments, welche in entgegengesetzter
-Richtung zu  $a_{p}$ zeigt\cite{Anderson2002}:
+Richtung zu $a_{p}$ zeigt\cite{Anderson2002}:
 \begin{equation}
 \beta =\frac{1}{P_{\mathit{SL}}}\int _{0}^{\theta _{\mathit{max}}}\sin
 \theta \cos \theta \rho (\theta )d\theta
 \end{equation}
-
-Messungen \cite{Anderson2002} zeigten, dass man den Strahl als konisch annehmen kann.
-Mit einem Gesamt\"offnungswinkel von  $\theta =3,75{}^{\circ}$ ist 
-$\beta =0,99\pm 0,01$ und damit  $w_{\mathit{SL}}=1,10\cdot
+Messungen  zeigten\cite{Anderson2002}, dass man den Strahl als konisch annehmen kann.
+Mit einem Gesamt\"offnungswinkel von $\theta =3,75{}^{\circ}$ ist
+$\beta =0,99\pm 0,01$ und damit $w_{\mathit{SL}}=1,10\cdot
 10^{-8}\mathit{cm}/s^{2}$.
 
-Mit dem Fehler der Sendeleistung und der Ungenauigkeit der Masse
+Mit einem Fehler der Sendeleistung und der Ungenauigkeit der Masse
 erh\"alt man als Ergebnis f\"ur die Beschleunigung der Sonden durch die
 Sendeleistung
 \begin{equation}
-a_{\mathit{SL}}=1,10\pm 0,11\cdot 10^{-8}\mathit{cm}/s^{2}
+a_{\mathit{SL}}=-1,10\pm 0,11\cdot 10^{-8}\mathit{cm}/s^{2}
 \end{equation}
 
 
@@ -279,39 +290,38 @@ a_{\mathit{SL}}=1,10\pm 0,11\cdot 10^{-8}\mathit{cm}/s^{2}
 
 W\"ahrend dem Flug zum Jupiter war die Sonde relativ nahe an der Sonne.
 Eine Erkl\"arung f\"ur die Beschleunigung k\"onnte nun folgende sein:
-Die Fl\"achen der RTGs, die der Sonne zugewandt waren, haben eine
+Die Fl\"achen der RTGs\footnote{RTG steht für radioisotope thermoelectric generator, zu Deutsch Radionuklidbatterie und ist im äußeren Planetensystem die einzig sinnvolle Energiequelle. Die Energieversorgung einer Raumsonde durch Solarzellen ist nicht praktikabel, da die Solarzellen enorme Flächen bräuchten um genug Leistung bereit zu stellen. In einem RTG zerfällt auf natürliche Weise ein $\alpha$-Strahler und erzeugt durch den Stoss der ausgesendeten Heliumkerne an anderen Atomen Wärme. Diese W\"arme nehmen thermoeletrische Bauelemente auf und wandeln sie direkt in elektrische Energie um.}, die der Sonne zugewandt waren, haben eine
 h\"ohere Strahlendosis durch den Sonnenwind erfahren als die der Sonne
-abgewandten. Dies geschah w\"ahrend die sonnenabgewandten Seiten von
-interplanetaren Staub getroffen wurden. Dadurch entstand ein
+abgewandten. Dies geschah gleichzeitig mit dem Auftreffen von interplanetarem Staub auf die sonnenabgewandten Seiten. Dadurch entstand ein
 Strahlungsgradient und somit eine ungleichm\"a{\ss}ige Abstrahlung der
 RTGs. Durch die spezielle Bauweise der K\"uhlrippen aus einer
 Magnesiumlegierung, die mit einem Zirkonium-Natrium Silicat beschichtet
-war, besitzen die K\"uhlrippen einen hohen Abstrahlungskoeffizienten
-von \~{}0,9 und einen geringen Absorptionskoeffizienten von \~{}0,2. Um
-nun  $a_{p}$ hervorzurufen m\"usste es eine unterschiedliche
+war, besitzen die K\"uhlrippen einen hohen Emissionskoeffizienten
+von ca. 0,9 und einen geringen Absorptionskoeffizienten von ca. 0,2. Um
+nun $a_{p}$ hervorzurufen m\"usste es eine unterschiedliche
 Abstrahlung in Front/Heck- Ausrichtung von 10\% gegeben haben. Nach
 unserem Kenntnisstand des Sonnenwindes und des interplanetaren Staubs
 ist es nicht m\"oglich, dass diese zwei Ph\"anomene einen derart
 gro{\ss}en Gradienten mit dem richtigen Vorzeichen erzeugen k\"onnen.
 Dies wurde durch visuelle Beweise der Voyager Sonden gest\"utzt\cite{Anderson2002}.
 
-W\"ahrend Fly-by Man\"overn wurden die Sonden jedoch sehr hoher
+W\"ahrend den Flyby Man\"overn wurden die Sonden jedoch sehr hoher
 Strahlung ausgesetzt, die eine Besch\"adigung der RTGs zur Folge haben
-k\"onnte. Man h\"atte also w\"ahrend eines Fly-by Man\"overs einen
-Anstieg in der Abstrahlung beobachten m\"ussen. Da f\"ur die
+k\"onnte. Man h\"atte also w\"ahrend eines Flyby Man\"overs einen
+Anstieg in der thermischen Emission beobachten m\"ussen. Da f\"ur die
 Oberfl\"achenenergiebelastung $F\alpha T^{4}$ gilt, h\"atte man eine
 Temperaturdifferenz an den K\"uhlrippen beobachten m\"ussen. Die
-Durchschnittstemperatur der K\"uhlrippen lag bei ca. 440 K \cite{Anderson2002}. Um 
-$a_{p}$ zu erkl\"aren m\"usste ein Unterschied von 10\% bzw. \~{}12,2 K
+Durchschnittstemperatur der K\"uhlrippen lag bei ca. 440 K \cite{Anderson2002}. Um
+$a_{p}$ zu erkl\"aren m\"usste ein Unterschied von 10\% bzw. $\approx$12,2 K
 herrschen. Dieser Unterschied wurde jedoch nicht beobachtet und somit
 kann auch dies als Ursache f\"ur die Anomalie ausgeschlossen werden. Um
 diesem Effekt dennoch gerecht zu werden, wird f\"ur die Fehlerrechnung
-eine Unterschiedliche Abstrahlung von 1\% angenommen. Bei einer
+eine unterschiedliche Abstrahlung von 1\% angenommen. Bei einer
 thermischen Leistung von 2000 W liegt eine unterschiedliche Abstrahlung
-von 10 W in Front/Heck Ausrichtung vor. Da die K\"uhlrippen in einem
-Abstand von 30{\textdegree} angebracht sind, ergibt sich aus 
+von 10 W in Front/Heck-Ausrichtung vor. Da die K\"uhlrippen in einem
+Abstand von 30{\textdegree} angebracht sind, ergibt sich aus
 $[10W]\cdot \int _{0}^{\pi }[\sin \Phi ]d\Phi /\pi \approx
-6,12W$\cite{Anderson2002}(da 4 der 12 Rippen senkrecht und parallel zur Flugrichtung
+6,12W$\cite{Anderson2002} (da 4 der 12 Rippen senkrecht und parallel zur Flugrichtung
 stehen) eine Ungenauigkeit von
 
 \begin{equation}
@@ -327,29 +337,26 @@ Eine weitere Erkl\"arung der anomalen Beschleunigung ist, dass durch den
 $\alpha ${}-Zerfall von Pu-238 Helium aus den RTGs austritt. Die RTGs
 der Pioneer Sonden wurden so konstruiert, dass das Helium aus der
 Hitzequelle in den thermoelektrischen Konverter diffundieren kann. Der
-Konverter ist mit einem O-Ring angedichtet, der es dem Helium
-allerdings erm\"oglicht in den Weltraum zu entweichen. Im gesamten
-Treibstoff der RTGs sind 5,8 kg Pu-238 enthalten\cite{Anderson2002}. Mit einer
-Halbwertszeit von 87,74 a werden pro Jahr ca. 0,77 g Helium bei einer
-Temperatur von 433 K ausgesto{\ss}en. Dies entspricht nach 3/2 kT einer
+Konverter ist mit einem Dichtungsring(O-Ring) abgeschlossen, der es dem Helium
+allerdings erm\"oglicht in den Weltraum zu entweichen. Im gesamten Brennstoff \footnote{Klumpen radioaktiver Müll} der RTGs sind 5,8 kg Pu-238 enthalten\cite{Anderson2002}. Mit einer
+Halbwertszeit von 87,74 Jahren werden pro Jahr ca. 0,77 g Helium mit einer
+Temperatur von 433 K ausgesto{\ss}en. Dies entspricht nach $E_kin=3/2 kT$ einer
 Geschwindigkeit von 1,22 km/s. Mit der Raketengleichung
 \begin{equation}
 a(t)=-v(t)\frac{d}{\mathit{dt}}[\ln M(t)]
-\end{equation}
-
+\end{equation},
 unser nominellen Pioneer 10 Masse von 241 kg und der Annahme, dass das
 Helium die RTGs ungerichtet verl\"asst, erh\"alt man eine
-Beschleunigung von  $1,16\cdot 10^{-8}\mathit{cm}/s^{2}$. 
+Beschleunigung von $1,16\cdot 10^{-8}\mathit{cm}/s^{2}$.
 
 Der Gasaustoss ist jedoch nicht ungerichtet, sondern, da der O-Ring an
 der Seite der RTGs angebracht ist, in Richtung Sonne. Durch die
 K\"uhlrippen der RTGs wird au{\ss}erdem noch Helium elastisch
 reflektiert, sodass man auf eine Beschleunigung aufgrund des
-Heliumaussto{\ss}es von 
+Heliumaussto{\ss}es von
 \begin{equation}
-a_{\mathit{He}}=(0,15\pm 0,16)\cdot 10^{-8}\mathit{cm}/s^{2}
+a_{\mathit{He}}=-(0,15\pm 0,16)\cdot 10^{-8}\mathit{cm}/s^{2}
 \end{equation}
-
 kommt\cite{Anderson2002}.
 
 
@@ -358,28 +365,21 @@ kommt\cite{Anderson2002}.
 \subsubsection{Gasleck im Antriebssystem}
 
 Da es keine perfekten Ventile gibt, muss man immer mit einem leichten
-Gasausto{\ss} im Antriebssystem rechnen. Einige Sonden\cite{Anderson2002} haben
-deswegen Beschleunigungen von bis zu  $10^{-7}\mathit{cm}/s^{2}$
-gemessen. Das Antriebssystem der Pioneers besteht aus drei Paar
+Gasaustritt im Antriebssystem rechnen. Einige Sonden\cite{Anderson2002} haben
+deswegen Beschleunigungen von bis zu $10^{-7}\mathit{cm}/s^{2}$
+erfahren. Das Antriebssystem der Pioneers besteht aus drei Paar
 Korrekturd\"usen, die im 120{\textdegree} Abstand um die Parabolantenne
 angebracht sind. Von diesen drei Paaren sind zwei parallel zur
 Sonnenl\"angsachse ausgerichtet um die Pr\"azession der Parabolantenne
 zu steuern. Ein Paar ist tangentiell zur Antenne positioniert um die
 Rotation zu steuern. Aus den Ver\"anderungen der Rotationsrate in den
 Intervallen i=I,II,III ist die Kraft eines Gaslecks mit einem Hebelarm
-von R=1,37 m und einem Tr\"agheitsmoment von 
-$I_{z}=588,3\mathit{kg}\cdot m^{2}$
+von R=1,37 m und einem Tr\"agheitsmoment von
+$I_{z}=588,3\mathit{kg}\cdot\ m^{2}$
 \begin{equation}
 F_{\theta }=\frac{I_{z}\theta }{R}=(2,57;12,24;1,03)\cdot
 10^{2}N
 \end{equation}
-\footnote{
-In \cite{Anderson2002}, S. 36f wurde die Einheit
-\textit{dyne} verwendet da dies weder eine SI-Einheit ist, noch
-gebr\"auchlich ist, wurden alle Angaben in \textit{Newton} umgerechnet.
-Au{\ss}erdem ist die Einheit \textit{dyne }seit 1978\cite{wp} nicht
-mehr zul\"assig.
-}
 
 Um nun die Kraft der zwei anderen Korrekturd\"usen abzusch\"atzen, nimmt
 man an, dass diese das gleiche Gasleck haben, wie die
@@ -388,32 +388,29 @@ Rotationskorrekturd\"usen. So kann man nun annehmen\cite{Anderson2002}, dass
 F_{\mathit{GL}}\simeq \pm \sqrt{(2)}F_{\theta }=(\pm 3,64;\pm
 17,31;\pm 1,46)\cdot 10^{2}N
 \end{equation}
-
 ist. Unter der weiteren Annahme dass die Fehler normalverteilt sind,
 liegt der Fehler f\"ur Pioneer 10 bei
 \begin{equation}
 \sigma _{\mathit{GL}}=\pm 0,56\cdot 10^{-8}\mathit{cm}/s^{2}
 \end{equation}
-
 Dies ist die gr\"o{\ss}te Ungenauigkeit, aber jedoch nicht gro{\ss}
 genug um die Pioneer-Anomalie zu erkl\"aren.
 
 
 \bigskip
 
-\subsubsection{R\"ucksto{\ss} durch thermische Abstrahlung}
+\subsubsection{R\"ucksto{\ss} durch thermische Abstrahlung}\label{Hitze}
 
-In der urspr\"unglichen Arbeit von 2002 \cite{Anderson2002} stand den Autoren nur
+In der urspr\"unglichen Arbeit von 2002 \cite{Anderson2002} standen den Autoren nur
 begrenzte Telemetriedaten zur Verf\"ugung. So haben sie einen Wert
 f\"ur den R\"ucksto{\ss} der thermischen Abstrahlung und der
-ungleichm\"a{\ss}igen Abk\"uhlung der Sonden von 
-$a_{\mathit{tA}/\mathit{Ak}}=-0,55\pm 0,73\cdot
+ungleichm\"a{\ss}igen Abk\"uhlung der Sonden von
+$a_{\mathit{tA}/\mathit{Ak}}=0,55\pm 0,73\cdot
 10^{-8}\mathit{cm}/s^{2}$ errechnet \cite{Anderson2002}[Tabelle X]. 2003 wurde jedoch
 eine Arbeit ver\"offentlicht, die eine gerichtete thermische
 Abstrahlungsleistung von 52 W angab. Dieser hohe Wert wurde durch
-andere Berechnungen, wie die Annahme eines Lambertstrahlers(\~{}45 W)
-oder eine Finite Elemente Methode(\~{}48 W), gest\"utzt[\#the pioneer
-anomaly, turyshev]. Diese Berechnungen zeigen, dass die Kraft der
+andere Berechnungen, wie die Annahme eines Lambertstrahlers(ca. 45 W)
+oder eine Finite Elemente Methode(ca. 48 W), gest\"utzt\cite{Turyshev2010}. Diese Berechnungen zeigen, dass die Kraft der
 thermischen Strahlung vollkommen untersch\"atzt wurde. Leider waren
 auch die neuen Werte nur auf groben Absch\"atzungen der thermischen und
 elektrischen Leistung an Board der Sonden gest\"utzt. Au{\ss}erdem
@@ -427,20 +424,16 @@ zum anderen die elektrischen Ger\"ate an Board.
 
 
 \bigskip
-
-Hitzeabstrahlung der RTGs und der elektronischen Ger\"aten %% Hier kommt noch ne subsubsubsection hin
-
 Da sich alle 4 RTGs einer jeden Pioneer Sonde zeitlich gleich verhalten,
 kann man sie als eine Hitzequelle beschreiben. Die Leistung der RTGs
-verh\"alt sich nach dem Zerfallsgesetz mit 
+verh\"alt sich nach dem Zerfallsgesetz mit
 \begin{equation}
 P_{\mathit{rtg}}(t)=2^{\frac{-(t-t_{0})}{T}}P_{\mathit{rtg}}(t_{0})
 \end{equation}
-
 mit dem Zeitpunkt $t_0$ an dem die
-Leistung  $P_{\mathit{rtg}}(t_{0})=(650\pm 1)W/\mathit{RTG}$ gemessen
+Leistung $P_{\mathit{rtg}}(t_{0})=(650\pm 1)W/\mathit{RTG}$ gemessen
 wurde und der Halbwertszeit von Pu-238 von T=87,74 a. Da man f\"ur die
-abgenommene elektrische Leistung die genauen Daten kennt (Abb.\#\#),
+abgenommene elektrische Leistung die genauen Daten kennt (Abb.\ref{fig:hitze}),
 l\"asst sich die W\"armeleistung schreiben als
 \begin{equation}
 B_{\mathit{rtg}}(t)=P_{\mathit{rtg}}(t)-P_{\mathit{el}}(t)
@@ -449,31 +442,38 @@ B_{\mathit{rtg}}(t)=P_{\mathit{rtg}}(t)-P_{\mathit{el}}(t)
 
 \bigskip
 
-\#\#Abb\#\#(turyshev, s.134)
+\begin{figure}[htbn]
+\begin{center}
+\noindent    
+\psfig{figure=images/hitze,width=0.8\linewidth,height=\textheight,keepaspectratio}
+\end{center}
+\vskip -10pt
+  \caption{Hitzeentwicklung der RTGs (rote Datenpunkte, Skala auf der linken Seite) und der elektronischen Geräte (grüne Datenpunkte, Skala auf der rechten Seite) über die Funktionsdauer von Pioneer 10 \cite{Turyshev2010}}
+\label{fig:hitze}
+\end{figure} 
 
 
 \bigskip
 
-In Abb.\#\# ist au{\ss}erdem noch die elektrische Leistung aufgetragen,
-die von \~{}160 W am Start der Mission langsam auf \~{}60 W abfiel, als
+In Abb. \ref{fig:hitze} ist au{\ss}erdem noch die elektrische Leistung aufgetragen,
+die von ca. 160 W am Start der Mission langsam auf ca. 60 W abfiel, als
 Pioneer 10 das letzte Signal sendete. Teilweise wurde die entnommene
-elektrische Leistung aus den RTGs in den Ger\"aten in Hitze umgewandelt
+elektrische Leistung aus den RTGs in den Ger\"aten unterschiedlich stark in Hitze umgewandelt
 und abgestrahlt. Obwohl die Verteilung der Hitzequellen innerhalb der
 Sonde nicht gleichm\"a{\ss}ig war, blieb die Temperaturverteilung in
-der Sonde als Funktion der Zeit linear\cite{Turyshev2010}. Somit k\"onnen
-wir die Hitzeabstrahlung aufgrund von elektrischen Ger\"aten als eine
-Hitzequelle behandeln. Die Daten hierf\"ur wissen wir aus der
-Telemetrie(Abb.\#\#).
+der Sonde als Funktion der Zeit linear\cite{Turyshev2010}. Somit kann
+man die Hitzeabstrahlung aufgrund von elektrischen Ger\"aten als eine
+Hitzequelle behandeln. Die Daten hierf\"ur liefert die Telemetrie(Abb.\ref{fig:hitze}).
 
 Die Berechnung der Kraft auf die Sonden gestaltet sich etwas einfacher,
 da durch die Spinstabilisierung die Kraft \textit{F }nur entlang des
-Einheitsvektors der Rotationsachse \textit{s} berechnet werden muss:
+Einheitsvektors der Rotationsachse \textit{\bf s} berechnet werden muss:
 \begin{equation}
 F=\frac{1}{c}(\xi _{\mathit{rtg}}B_{\mathit{rtg}}+\xi
-_{\mathit{el}}B_{\mathit{el}})s
+_{\mathit{el}}B_{\mathit{el}}){\bf s}
 \end{equation}
 
-Die Faktoren  $\xi _{\mathit{rtg}}$ und  $\xi _{\mathit{el}}$ lassen
+Die Faktoren $\xi _{\mathit{rtg}}$ und $\xi _{\mathit{el}}$ lassen
 sich aus der Geometrie und den thermischen Eigenschaften der Sonden
 berechnen\cite{Turyshev2010}.
 
@@ -484,22 +484,22 @@ Beschleunigung. Mithilfe der neuen, kompletten Telemetriedaten ist es
 nun m\"oglich sehr gute Finite Elemente Modelle der Pioneer Sonden im
 Bezug auf die Hitzeverteilung zu erstellen. Sollte die Anomalie, wenn
 auch nur teilweise, von dieser thermischen Kraft erkl\"art werden, muss
-man sich auch Gedanken \"uber die Konstanz von  $a_{p}$ machen.
+man sich erneut Gedanken \"uber die Konstanz von $a_{p}$ machen.
 
 
 \bigskip
 
 \subsection{ Fehlertabelle und endg\"ultiges Ergebnis}
 
-In Kapitel 3.1 und 3.2 haben wir gesehen, dass die meisten Effekte auf
-die Pioneer Sonden nur zu einem sehr kleinen Teil Einfluss auf die
+In Kapitel \ref{extern} und \ref{intern} haben wir gesehen, dass die meisten Effekte, die 
+die Pioneer Sonden erfahren, nur zu einem sehr kleinen Teil Einfluss auf die
 Beschleunigung haben. Wir haben in dieser Arbeit nur die wichtigsten
 Fehlerquellen zusammengefasst. Diese und andere Fehlerquellen, ihre
 Werte und Ungenauigkeiten sind in nachfolgender Tabelle aufgelistet.
 
 
 \bigskip
-\begin{table}[htbn]
+\begin{table}[htbn]\label{fehler}
 \newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
 \centering
 \begin{tabular}{|c|c|c|}
@@ -509,7 +509,7 @@ Wert $\cdot (10^{-8}) cm/s^2$ &
 $\sigma\ in\ (10^{-8}) cm/s^2$\\ \hline
 \mc{3}{|c|}{\bf 1. Externe Fehlerquellen} \\ \hline
 Strahlungsdruck der Sonne &
-\raggedleft 0,03 &
+\raggedleft -0,03 &
  0,01\\ \hline
 Sonnenwind &
 ~
@@ -555,10 +555,10 @@ Troposph\"are und Ionosph\"are &
 \\ \hline
 \mc{3}{|c|}{\bf 2. Sonden interne Fehlerquellen}\\ \hline
 R\"ucksto{\ss} der Radiowellen &
-\raggedleft 1,1 &
+\raggedleft -1,1 &
  0,11\\ \hline
-Hitze, reflektiert von der Sonne &
-\raggedleft {}-0,55 &
+Hitze, reflektiert von der Sonde &
+\raggedleft {}0,55 &
  0,55\\ \hline
 Ungleichm\"a{\ss}ige Hitzeabstrahlung der RTGs &
 ~
@@ -569,14 +569,14 @@ Ungleichm\"a{\ss}ige Abk\"uhlung der Sonden &
  &
  0,48\\ \hline
 Heliumaussto{\ss} aus den RTGs &
-\raggedleft 0,15 &
+\raggedleft -0,15 &
  0,16\\ \hline
 Gaslecks &
 ~
  &
  0,56\\ \hline
 Unterschiede zwischen den Sonden &
-\raggedleft 0,17 &
+\raggedleft -0,17 &
  0,17\\ \hline
 ~
  &
@@ -610,21 +610,20 @@ Jahres- und Tagesschwankungen &
 \label{tab:fehler}
 \end{table}
 
-Das Ergebnis der anormalen Beschleunigung von Pioneer 10 und 11 liegt
-bei 
+\noindent Das Ergebnis der anormalen Beschleunigung von Pioneer 10 und 11 liegt
+bei\cite{Anderson2002}
 \begin{equation}
 a_{p(\mathit{gemessen})}=(7,84\pm 0,01)\cdot
-10^{-8}\mathit{cm}/s^{2}
-\end{equation}\cite{Anderson2002}.
-
+10^{-8}\mathit{cm}/s^{2}\ .
+\end{equation}
 Bezieht man nun die Werte der Fehler und deren Ungenauigkeit von Kapitel
-3.1 und 3.2 mit ein, so erh\"alt man mit den Werten der Fehlertabelle
+\ref{extern} und \ref{intern} mit ein, so erh\"alt man mit den Werten der Fehlertabelle
 und mit
 \begin{equation}
-a_{p}=a_{p(\mathit{gemessen})}+w_{p}\pm \sigma _{p} \ ,
+a_{p}=a_{p(\mathit{gemessen})}-(w_{p}\pm \sigma _{p}) \ ,
 \end{equation}
-
-wobei  $w_{p}$ der Wert und  $\sigma _{p}$ die jeweilige Ungenauigkeit
-ist, den bekannten Wert f\"ur  $a_{p}=(8,74\pm 1,33)\cdot
+wobei $w_{p}$ der Wert und $\sigma _{p}$ die jeweilige Ungenauigkeit
+ist, den bekannten Wert f\"ur $a_{p}=(8,74\pm 1,33)\cdot
 10^{-8}m/s^{2}$.
 
+\FloatBarrier

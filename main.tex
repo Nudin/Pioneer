@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,twoside]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{cite}
@@ -41,6 +41,9 @@
     urlcolor=blue
 }
 \linespread{1.359140914229522617680} 
+\usepackage{a4wide}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{1cm}
 
 \newcommand{\rem}[1]{}
 
@@ -54,13 +57,15 @@
 
 \begin{document}
 
-\maketitle
+%\maketitle
 
 % \begin{abstract}
 
 % \end{abstract}
 
 \shorthandoff{"}
+
+%\input{deckblatt}
 
 \input{einleitung}
 
@@ -87,33 +92,40 @@
 \input{missionen}
 
 \input{andere}
+\input{schluss}
 
 % ToDo:
 %% - Wohin mit
-%%		* S-Band ist für 3-D wenig geeignet. (Route to Understanding, S. 0310)  -> ?
+%%		* S-Band ist für 3-D wenig geeignet. (Route to Understanding, S. 0310)  ok
 %%		* Analyse begann 1994 (Route to Understanding)
-%%		* High rate Doppler data?
-%% - Abgrenzung Navigation <> Einleitung
+%%		* High rate Doppler data?				ok?
+%% - Abgrenzung Navigation <> Einleitung		ok
 %% - Integrationszeit <-> Compressiontime
 %% - Datenfilterung / weighting?
-%% - high rate
-%% - Zeitumrechnung
+%% - Zeitumrechnung								ok
+%% - Richtung - alte daten
 %% - ...
 
 % ToFix:
-%% - Quellen-format fixen (ok?)
+%% - Quellen-format fixen				ok
 %% - Footnote der Authoren
 %% - evtl. Anführungszeichen richten
-%% - Namen im Text vereinheitlichen
+%% - Namen im Text vereinheitlichen		ok
 %% - Ref zu Bild 3 (und anderen?) fixen
 %% - Tabelle (Flo) fixen
-%% - Tabelle (Judith)
+%% - Tabelle (Judith)					ok
 %% - Fusnote (Flo)
-%% - Onlinequellen
+%% - Onlinequellen						ok
 %% - Subsubsubsection
 %% - Collaboration
+%% - Klumpen
+%% - Rotieren
 
 \bibliography{lit}{}
 \bibliographystyle{hunsrtdin}
+
+\FloatBarrier
+
+\input{erklaerung}
 
 \end{document}

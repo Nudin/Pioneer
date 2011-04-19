@@ -37,13 +37,13 @@ vernachlässigt, was zur einfacheren Form führt:
 \begin{equation}\label{equ:einf_rel}
  \frac{\nu'_E-\nu_E}{\nu_E} \approx -2\frac{v/c}{1+v/c} \approx -2 \frac{v}{c}
 \end{equation}
-Ist die Sendeantenne auch die Empfangsantenne, so spricht man von einer zwei-Wege-Messung, wenn Sender- und Empfängerantennen unterschiedlich sind, spricht man von einer drei-Wege-Messung\cite{Levy2009}. Bei den drei-Wege Doppler-Messungen besteht die Gefahr, dass ein unbekannter Zeitunterschied zwischen den Uhren der Antennen die Messung verfälscht. Daher verwendeten manche Analysen diese Daten nicht oder nur selten\cite{Anderson2002}, während andere sie mit zwei-Wege-Doppler-Daten gleich behandelten\cite{Markwardt2002}. Darüber hinaus gibt es eine Vielzahl an sogenannten Einwegs-Doppler-Messdaten, bei denen die Sonde von sich aus die Bodenstation kontaktiert hat. Da die Frequenz der Signalquelle im Weltraumfahrzeug nicht ausreichend genau bekannt ist, sind diese Daten für unsere Zwecke unbrauchbar und werden ignoriert. %schon oben, als footnote?
+Ist die Sendeantenne auch die Empfangsantenne, so spricht man von einer zwei-Wege-Messung, wenn Sender- und Empfängerantennen unterschiedlich sind, spricht man von einer drei-Wege-Messung\cite{Levy2009}. Bei den drei-Wege Doppler-Messungen besteht die Gefahr, dass ein unbekannter Zeitunterschied zwischen den Uhren der Antennen die Messung verfälscht. Daher verwendeten manche Analysen diese Daten nicht oder nur selten\cite{Anderson2002}, während andere sie mit zwei-Wege-Doppler-Daten gleich behandelten\cite{Markwardt2002}. Darüber hinaus gibt es eine Vielzahl an sogenannten Einwegs-Doppler-Messdaten, bei denen die Sonde von sich aus die Bodenstation kontaktiert hat. Da die Frequenz der Signalquelle im Weltraumfahrzeug nicht ausreichend genau bekannt ist, sind diese Daten für unsere Zwecke unbrauchbar und werden ignoriert.
 
 Unabhängig davon lässt sich die Entfernung $d$ der Sonde auch durch die Laufzeit $\Delta t$ des Signales bestimmen:
 \begin{equation}
  2d = c \Delta t
 \end{equation}
-Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder der Sonde demoduliert und filtert es um es in den Downlink hinein zu modulieren.) Dieses Verfahren nennt man "ramping". % wirklich mit -ing?
+Dafür wird der Uplink per Phasenmodulation mit einem Signal versehen und das von der Sonde zurückgesendete Echo beobachtet. (Der Transponder der Sonde demoduliert und filtert es um es in den Downlink hinein zu modulieren.) Dieses Verfahren nennt man "ramping".
 Dabei muss man beachten, dass es durch das ständige Senden solcher modulierter Signale und die langen Laufzeiten zu Verwechselungen zwischen unterschiedlichen Signalen kommen kann. Dies muss von den Analyseprogrammen erkannt werden.
 
 Somit hat man zwei voneinander unabhängige Messmethoden, was Konsistenzchecks,
@@ -51,12 +51,12 @@ Fehlerminimierung und dem Ausschluss einiger phänomenologischer Fehler ermögli
 Allerdings wurden die Laufzeitmessungen laut \cite{Anderson2002} nur bei der Analyse der Daten von Galileo und Ulysses (siehe unten), nicht bei den Pioneersonden verwendet. Von den Pioneersonden liegen Laufzeitmessdaten ("ramped-range") nur von der ersten Zeit der Mission vor. Im späteren Verlauf der Mission wurde diese Technik unbrauchbar, da die Bandbreite der Trägerfrequenz zu klein wurde um die modulierten Veränderungen zu detektieren\cite{Turyshev2010}. % "carrier tracking loop bandwidth"->"Bandbreite der Trägerfrequenz" richtig übersetzt? Erklären warum.
 
 Aufgrund der Eigenrotation der Erde lässt sich außerdem aus der dadurch entstehenden Modulation der Doppler-Daten auch die 3-dimensionale Position der Sonde berechnen. Die Amplitude der Sinusförmigen Variation ist mit dem Deklinationswinkel und die Phase mit der Rektaszension verbunden. Die Position lässt sich dadurch aus einer, einige Tage langen, Reihe von Dopplerdaten bestimmen. Daraus kann man durch Berechnung der Dynamik der Raumsondenbewegung ebenfalls die Entfernung berechnen. Auch dies fließt in die Analysen mit ein.\cite{Anderson2002} % Wirklich die Phase?
-%Aber nich besonders gut, wie wir später sehen werden!?	 	% mehr
+Leider ist das S-Band für 3-dimensionale Orbit-Rekonstruktion nur mäßig geignet.\cite{Turyshev2004}
 
 %Laut Markward\cite{Markwardt2002} wurden die Effekte der Dopplerverschiebung auf dem Hinweg bereits beim Senden grob kompensiert, so dass die Frequenz des Signals, das die Sonde empfängt, bei etwa 2.11 GHz liegt.
 
 Die Frequenzmessung erfolgte durch Zählen der Perioden und Vergleich mit einer Atomuhr\cite{Nieto2007}. %``Schwingungen'' als Formulierung überprüfen -  Perioden
-Die Frequenz ist dabei einen Durchschnittswert, definiert über die Perioden in einem gewissem Zeitraum, Integrationszeitraum genannt. Die Integrationszeit lag zwischen 0.1 Sekunde und 100 Sekunden oder teilweise noch mehr\cite{Markwardt2002}.
+Die Frequenz ist dabei einen Durchschnittswert, definiert über die Perioden in einem gewissem Zeitraum, Integrationszeitraum genannt. Die Integrationszeit lag zwischen 0,1 Sekunde und 100 Sekunden oder teilweise noch mehr\cite{Markwardt2002}. Daten mit sehr kurzem Integrationszeitraum nennt man "High rate" Dopplerdaten.
 
 %Zumindest im Zeitraum von 1987-1994 erfolgten die Messungen weitgehend regelmäßig, zusätzlich gab es zu einigen Zeitpunkten eine höhere Anzahl an Messungen\cite{Markwardt2002}. % sonst? ; später weniger?
 Laut Markwardt\cite{Markwardt2002} erfolgten die Messungen weitgehend regelmäßig, es gab jedoch zusätzlich zu einigen Zeitpunkten eine höhere Anzahl an Messungen.
@@ -138,22 +138,20 @@ Zusammen mit den Effekten des Spins ergibt sich damit die gesamte Frequenzversch
 \end{equation}
 Wobei $d_{\overline{ER}}$ und $d_{\overline{RE}}$ die Dopplerverschiebungsterme gemäß Gleichung \ref{equ:doppler3} sind.
 Die Erde ist jedoch sehr dynamisch: um die Präzision, die für diese Belange gewünscht ist, zu erreichen, muss die Geschwindigkeit der Antennen auf der Erdoberfläche unter der Berücksichtigung von Prezission, Nutation,
-siderischen Rotation, Polarbewegung, der Gezeitenkräfte und Platentektonischen Bewegungen bestimmt werden.
-Die Angaben zu Abbremsung sowie Unregelmäßigkeit der Rotation, zur Polbewegung, die Love numbers\footnote{Von AEH Love beschriebene ``Proportionalitätsfaktoren zwischen den verschiedenen Verzerrungen sowie dem sich einstellenden Gravitationsfeld einer sphärisch symmetrischen, nichtrotierenden elastischen isotropen Kugel und einem äußerem an der Kugel angreifenden Grafitationsgradienten''\cite{Dittus2006}.} und der Chandler wobble\footnote{Spiralfomiges Schwingen
+siderischen Rotation, Polarbewegung, der Gezeitenkräfte und plattentektonischen Bewegungen bestimmt werden.
+Die Angaben zu Abbremsung sowie Unregelmäßigkeit der Rotation, zur Polbewegung, die Loveschen Zahlen\footnote{Von A. E. H. Love beschriebene ``Proportionalitätsfaktoren zwischen den verschiedenen Verzerrungen sowie dem sich einstellenden Gravitationsfeld einer sphärisch symmetrischen, nichtrotierenden elastischen isotropen Kugel und einem äußerem an der Kugel angreifenden Grafitationsgradienten''\cite{Dittus2006}.} und der Chandler wobble\footnote{Spiralfomiges Schwingen
 der Erdachse um 0,7 Bogensekunden mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären?
-wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeit von am Mond von Spiegeln reflektierten Laserpulsen gemessen.},
-Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von Laserpulsen zwischen einem Satellit und der Bodenstation gemesse.n} und Very Long Baseline Interferometry
+wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeiten von Laserpulsen gemessen, welche von Spiegeln auf dem Mond reflektierten werden.},
+Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von Laserpulsen zwischen einem Satellit und der Bodenstation gemessen.} und Very Long Baseline Interferometry
 (VLBI)\footnote{Dabei werden von zwei, interkontinental weit entfernten Radioteleskopen, die Signale inklusive
 Zeitreferenz gespeichert und die Interferenz dieser Signale am Computer stimuliert.} bestimmt.
 Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt,
 zu welchen die Earth Orientation Parameters (EOP) des JPL viel beiträgt\cite{Anderson2002}.
 
-Die Beobachtungen der Bodenstationen wurden mit Zeitangaben nach der Universal Time 1 (UT1)
-\footnote{Durch astronomische Beobachtung gewonnene und um Einflüsse der Polschwankungen (mit Perioden über 7 Tage) korrigierte, mittlere Ortszeit des durch die Sternwarte von Greenwich führenden Nullmeridians}
-parametrisiert gespeichert. Für die Analysen und
-Berechnungen mussten diese Zeitangaben einerseits in die Internationale Atomzeit TAI, andererseits auch in die
-Ephemeridenzeit umgerechnet werden. Auch hierfür verwendete man äußerst genaue Angaben zu Position, Geschwindigkeit und
-Gravitationspotential der Antennen.\cite{Dittus2006} % stimmt das? Ander sagen as anderes...
+Für die Analysen wurden etliche unterschiedliche Zeiten verwendet. So enthalten die Ephemeriden Zeitangaben in der Ephemeridenzeit (ET),
+welche für die Berechnungen in die Internationale Atomzeit (TAI) umgerechnet wurden. Die ATDF-Dateien enthalten die Zeitangaben in der koordinierten Weltzeit (UTC),
+die ODF-Dateien jedoch in Universal Time 1 (UT1)\footnote{Durch astronomische Beobachtung gewonnene und um Einflüsse der Polschwankungen (mit Perioden über 7 Tage) korrigierte, mittlere Ortszeit des durch die Sternwarte von Greenwich führenden Nullmeridians}. Die Zeiten mussten für die Analysen, unter Berücktischtigung der Erdbewegung, umgerechnet werden.
+Auch hierfür verwendete man äußerst genaue Angaben zu Position, Geschwindigkeit und Gravitationspotential der Antennen.\cite{Dittus2006}\cite{Anderson2002}\cite{Markwardt2002}
 
 An dieser Stelle sei erwähnt, das die beiden vorangegangenen Abschnitte sich primär auf die Berechnungen von Anderson et al. aus dem Jahr 2002 beziehen.
 Wir werden im nächsten Kapitel sehen, dass es mehrere unabhängige Überprüfungen gegeben hat.
