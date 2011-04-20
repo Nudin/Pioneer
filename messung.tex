@@ -65,7 +65,7 @@ Laut Markwardt\cite{Markwardt2002} erfolgten die Messungen weitgehend regelmäß
 % Vergleich der gemessenen Geschwindigkeit mit der berechneten Geschwindigkeit beschränken. % Oder doch nicht?
 
 
-\subsubsection{Archivierung der Messdaten}
+\subsubsection{Archivierung der Messdaten}\label{archiv}
 
 Gespeichert wurden die Daten ursprünglich im "Intermediate Data Record"-Format (IDR), nach einer Konversion dann im "Archival Tracking Data File"-Format (ATDF) auf Magnetbändern. Diese enthalten alle vom DSN gemessenen Daten, inklusive Signalstärke, Antennenausrichtung, Frequenz, Entfernung und Störungen\cite{Turyshev2010}. % range und residuals besser übersetzen.
 Viele der ATDF Dateien wurden als Magnetbänder an das NSSDC-Archiv zur Archivierung gesandt, jedoch nicht alle – dazu mehr in Kapitel \ref{daten}\cite{Markwardt2002}.
@@ -90,7 +90,7 @@ Darüber hinaus wurden die Navigations-Daten nicht sorgfältig archiviert\cite{N
 Die Auswirkungen davon werden wir in Kapitel \ref{daten} noch diskutieren.
 
 
-\subsubsection{Weitere Einflüsse auf die Messung}
+\subsubsection{Weitere Einflüsse auf die Messung}\label{einfluesse}
 Für die genauere Bestimmung der Bahn muss man einige Einflüsse auf die Messung berücksichtigen, welche wir im Folgenden erläutern wollen.
 
 Da das Radiosignal zirkular polarisiert ist, muss bei der Berechnung die Rotation der Sonde berücksichtigt werden: Beim "Reflektieren" des Signals an der Antenne des sich drehenden Raumfahrzeugs kommt es zu einer von der Rotationsgeschwindigkeit abhängigen zusätzlichen Dopplerverschiebung. Jede Umdrehung der Sonde führt zu einer zusätzlichen Schwingung im Up- und im Downlink. Mit dem Frequenzverhältnis von Up- und Downlink ergeben sich insgesamt $(1+240/221)$ Schwingungen pro Umdrehung der Sonde\cite{Anderson2002}. %Ist "Schwingungen" das richtige Wort dafür
@@ -143,8 +143,16 @@ Die Angaben zu Abbremsung sowie Unregelmäßigkeit der Rotation, zur Polbewegung
 der Erdachse um 0,7 Bogensekunden mit einer Periode von 435 Tagen} % Begriffe (genauer) erklären?
 wurden dabei direkt aus Messungen mit Lunar Laser Ranging (LLR)\footnote{Beim LLR wird die Laufzeiten von Laserpulsen gemessen, welche von Spiegeln auf dem Mond reflektierten werden.},
 Satellite Laser Ranging (SLR)\footnote{Beim SLR wird die Laufzeit von Laserpulsen zwischen einem Satellit und der Bodenstation gemessen.} und Very Long Baseline Interferometry
-(VLBI)\footnote{Dabei werden von zwei, interkontinental weit entfernten Radioteleskopen, die Signale inklusive
-Zeitreferenz gespeichert und die Interferenz dieser Signale am Computer stimuliert.} bestimmt.
+(VLBI)\footnote{Beim VLBI-Verfahren\cite{vlbi}, wird das selbe Radiosignal
+von mehreren, weit auseinander stehenden Antennen empfangen. Die Daten
+von den einzelnen Antennen werden zusammen mit einer einheitlichen
+Zeitinformation gespeichert. Sp\"ater werden die Daten und
+zugeh\"origen Zeiten der verschiedenen Antennen verglichen. So erh\"alt
+man den den Laufzeitunterschied des Signals zu den Antennen und kann
+daraus die Entfernung des Senders bestimmen. Da die Antennen, wegen der
+Speicherung der Daten, nicht mit einem Kabel verbunden sein m\"ussen,
+k\"onnen sie sehr weit weg voneinander aufgestellt werden, was das
+Aufl\"osungsverm\"ogen des Verfahrens deutlich erh\"oht.} bestimmt.
 Diese Daten wurden früher von Publikationen der International Earth Rotation Service (IERS) und der United States Naval Observatory (USNO) zusammengetragen. Heute werden die Daten vom ICRF bereitgestellt,
 zu welchen die Earth Orientation Parameters (EOP) des JPL viel beiträgt\cite{Anderson2002}.
 

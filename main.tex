@@ -15,6 +15,8 @@
 \usepackage{epsfig}
 \usepackage{gensymb}
 \usepackage{supertabular}
+\usepackage{pdfpages}
+
 
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -57,7 +59,16 @@
 
 \begin{document}
 
+\includepdf{Deckblatt.pdf}
+
+\thispagestyle{empty}
+\cleardoublepage
+
 %\maketitle
+{\small
+\tableofcontents
+}
+\newpage 
 
 % \begin{abstract}
 
@@ -66,7 +77,6 @@
 \shorthandoff{"}
 
 %\input{deckblatt}
-
 \input{einleitung}
 
 \section{Die Anomalie}
@@ -96,35 +106,22 @@
 
 % ToDo:
 %% - Wohin mit
-%%		* S-Band ist für 3-D wenig geeignet. (Route to Understanding, S. 0310)  ok
 %%		* Analyse begann 1994 (Route to Understanding)
-%%		* High rate Doppler data?				ok?
-%% - Abgrenzung Navigation <> Einleitung		ok
 %% - Integrationszeit <-> Compressiontime
 %% - Datenfilterung / weighting?
-%% - Zeitumrechnung								ok
-%% - Richtung - alte daten
+%% - Richtung - alte daten			OK
 %% - ...
 
 % ToFix:
-%% - Quellen-format fixen				ok
-%% - Footnote der Authoren
+%% - Footnote der Authoren			OK
 %% - evtl. Anführungszeichen richten
-%% - Namen im Text vereinheitlichen		ok
-%% - Ref zu Bild 3 (und anderen?) fixen
-%% - Tabelle (Flo) fixen
-%% - Tabelle (Judith)					ok
-%% - Fusnote (Flo)
-%% - Onlinequellen						ok
-%% - Subsubsubsection
-%% - Collaboration
-%% - Klumpen
-%% - Rotieren
+%% - VLBI							OK
 
 \bibliography{lit}{}
 \bibliographystyle{hunsrtdin}
 
 \FloatBarrier
+\newpage 
 
 \input{erklaerung}
 
