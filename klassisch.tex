@@ -500,10 +500,10 @@ Werte und Ungenauigkeiten sind in nachfolgender Tabelle aufgelistet.
 
 \bigskip
 \begin{table}[htbn]\label{fehler}
-\footnotesize
+\tablesize
 \newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|p{\tablewidth}|c|c|}
 \hline
 Beschreibung &
 Wert $\cdot (10^{-8}) cm/s^2$ &
@@ -548,12 +548,6 @@ Troposph\"are und Ionosph\"are &
 ~
  &
  {\textless}0,001\\ \hline
-~
- &
-~
- &
-~
-\\ \hline
 \mc{3}{|c|}{\bf 2. Sonden interne Fehlerquellen}\\ \hline
 R\"ucksto{\ss} der Radiowellen &
 \raggedleft -1,1 &
@@ -579,12 +573,6 @@ Gaslecks &
 Unterschiede zwischen den Sonden &
 \raggedleft -0,17 &
  0,17\\ \hline
-~
- &
-~
- &
-~
-\\ \hline
 \mc{3}{|c|}{\bf 3. Rechnerische Fehlerquellen}\\ \hline
 Numerische Stabilit\"at der Finite Elemente Methode &
 ~

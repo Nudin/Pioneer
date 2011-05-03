@@ -1,30 +1,45 @@
-\documentclass[a4paper,10pt,twoside]{article}
+% A4:
+\documentclass[a4paper,10pt,twoside]{article}	% Print-Version
+%\documentclass[a4paper,10pt]{article}	% Monitor-Version
+\usepackage{a4wide}
+\setlength{\oddsidemargin}{1cm}		% Print-Version
+\setlength{\evensidemargin}{0cm}		% Print-Version
+\newcommand{\tablesize}{\footnotesize}
+\newcommand{\tablesizeB}{}
+\newcommand{\tablewidth}{.55\linewidth}
+\newcommand{\tableB}{|llcccp{0.2\linewidth}|}	% tabelle 
+
+
+% A5:
+%\documentclass[10pt,twoside]{article}
+%%\usepackage[a5paper, left=1.5cm, right=1.6cm, top=1cm, bottom=1.9cm]{geometry} % Druck, et.
+%\usepackage[a5paper, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry} % kleine ebook-reader, keine Seitenzahlen
+%%\setlength{\oddsidemargin}{-0.5cm}		% Print-Version
+%%\setlength{\evensidemargin}{-1.5cm}		% Print-Version
+%\newcommand{\tablesize}{\footnotesize}
+%\newcommand{\tablesizeB}{\tiny}
+%\newcommand{\tablewidth}{.55\linewidth}
+%\newcommand{\tableB}{|llcccp{0.2\linewidth}|}% tabelle 
+
+% A6:
+%\documentclass[10pt]{article}
+%\usepackage[a6paper, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
+%\newcommand{\tablesize}{\tiny}
+%\newcommand{\tablesizeB}{\tiny}
+%\newcommand{\tablewidth}{.4\linewidth}
+%\newcommand{\tableB}{|lp{0.07\linewidth}p{0.1\linewidth}cp{0.13\linewidth}p{0.2\linewidth}|} % tabelle2
+
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{cite}
 \usepackage{amsmath}
 \usepackage{rotating}
-\usepackage{graphicx}
 \usepackage{epsfig}
 \usepackage{hyperref}
-
-\usepackage[percent]{overpic}
-\usepackage{color}
-\usepackage{subfig}
 \usepackage{placeins}
-\usepackage{epsfig}
 \usepackage{gensymb}
-\usepackage{supertabular}
 \usepackage{pdfpages}
-
-
-\usepackage{amsfonts}
-\usepackage{amssymb}
-
-\usepackage{pstricks}
-\usepackage{pst-plot}
-\usepackage[all]{xy}
-
+\linespread{1.359140914229522617680} 
 \hypersetup{
 %    bookmarks=true,
     pdftoolbar=true,
@@ -42,11 +57,6 @@
     filecolor=black,
     urlcolor=blue
 }
-\linespread{1.359140914229522617680} 
-\usepackage{a4wide}
-\setlength{\oddsidemargin}{0cm}
-\setlength{\evensidemargin}{1cm}
-
 \newcommand{\rem}[1]{}
 
 %opening
